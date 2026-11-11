@@ -1,0 +1,1414 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174b48"><title>Levi's Math Quest</title><style>
+:root{--ink:#193d3b;--muted:#63776e;--paper:#faf9f2;--green:#236b5c;--lime:#d8f578;--line:#e0e6d9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-rounded,'Arial Rounded MT Bold',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation;color:inherit;transition:transform .15s,background .15s}button:hover:not(:disabled){transform:translateY(-2px)}button:active:not(:disabled){transform:translateY(1px)}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible{outline:3px solid #8b6bbd;outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12;letter-spacing:-.045em}h1{font-size:clamp(34px,4vw,52px)}h2{font-size:27px}h3{font-size:21px}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.6}.eyebrow{font-size:10px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}.row{display:flex;align-items:center;gap:12px}.between{justify-content:space-between}.wrap{flex-wrap:wrap}.pill{border-radius:100px;padding:8px 13px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:750;background:#edf1e5}.coin{background:#f6e9b8;border:1px solid #e6cf86;color:#765617;white-space:nowrap}.coin b{border:2px solid #b18b32;border-radius:50%;width:23px;height:23px;display:grid;place-items:center;font-size:12px}.btn{border:0;border-radius:13px;background:var(--green);color:white;font-weight:750;padding:14px 21px;min-height:48px}.btn.soft{background:#edf1e5;color:var(--ink)}.btn.outline{background:white;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#a7473e}.icon-btn{height:44px;width:44px;display:grid;place-items:center;border:1px solid var(--line);background:white;border-radius:13px;font-size:20px}.header{max-width:1440px;height:90px;margin:auto;padding:0 40px;display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:850;letter-spacing:-.05em;margin-right:auto}.brand-mark{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#174b48;color:var(--lime);font-size:29px;transform:rotate(-6deg)}.nav{display:flex;gap:4px}.nav button{border:0;background:none;color:var(--muted);font-size:13px;font-weight:750;border-radius:11px;padding:12px}.nav button.active{background:#eaf0de;color:var(--ink)}.layout{max-width:1440px;margin:auto;padding:34px 40px 55px;display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:30px}.main{min-width:0}.tutor-panel{position:sticky;top:22px;align-self:start;border:1px solid #dce5d2;border-radius:26px;background:#eef2e6;overflow:hidden}.tutor-top{padding:20px 19px 0}.tutor-top strong{display:block;margin-top:5px}.tutor-top .pill{font-size:10px;padding:7px 10px}.tutor-stage{height:217px;display:flex;align-items:center;justify-content:center;position:relative;background:radial-gradient(ellipse at 50% 80%,#d8e5c4,transparent 68%)}.tutor-stage.space{background:radial-gradient(ellipse,#547186,#233e55)}.tutor-stage.sunset{background:linear-gradient(#ffe2b0,#efb7ae)}.tutor-stage.forest{background:radial-gradient(ellipse,#d8ebba,#a9d0a4)}.tutor-stage:after{content:'';position:absolute;bottom:21px;width:120px;height:14px;border-radius:50%;background:#173a3520}.tutor-art{height:190px;width:190px;z-index:1;animation:bob 3.5s ease-in-out infinite}.tutor-art.happy{animation:jump .65s 2,bob 3.5s 1.3s infinite}.tutor-art.thinking{animation:wobble .65s 2,bob 3.5s 1.3s infinite}.eyes{transform-origin:center;animation:blink 6s infinite}.bubble{position:relative;background:white;border:1px solid var(--line);padding:18px;margin:0 18px 16px;border-radius:18px;font-size:15px;line-height:1.55;min-height:95px;box-shadow:0 4px 0 #173a3505}.bubble:before{content:'';position:absolute;top:-9px;left:calc(50% - 8px);width:16px;height:16px;transform:rotate(45deg);background:inherit;border-top:1px solid var(--line);border-left:1px solid var(--line)}.bubble.error{background:#fff5e9;border-color:#e7c0a1}.bubble.success{border-color:#b8d38b}.tutor-controls{padding:0 18px 15px;display:flex;gap:8px}.toggle{border:1px solid #d4dec8;border-radius:10px;background:#fff8;padding:9px;font-size:12px;font-weight:750;min-height:42px;flex:1}.toggle[aria-pressed=true]{background:#dcebbd}.support-note{padding:0 18px 17px;font-size:10px;line-height:1.6;color:var(--muted)}.hero{background:#174b48;color:white;padding:37px;border-radius:26px;position:relative;overflow:hidden;min-height:253px;margin:24px 0 27px;display:flex;align-items:center}.hero-copy{position:relative;z-index:1;width:68%}.hero .eyebrow{color:var(--lime)}.hero h1{margin:13px 0 16px}.hero p{color:#d6e8df;line-height:1.65;max-width:420px;font-size:15px}.hero-art{position:absolute;right:-5px;top:0;width:310px;height:275px}.section-head{margin-bottom:18px}.section-head h2{font-size:24px}.module-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.module-card{background:white;border:1px solid var(--line);border-radius:23px;padding:24px;position:relative;box-shadow:0 7px 0 #173a3505}.symbol{height:53px;width:53px;border-radius:17px;background:var(--tint);display:grid;place-items:center;font-size:34px;font-weight:750;margin-bottom:18px}.module-card>.pill{position:absolute;right:22px;top:25px;font-size:10px}.module-card h3{font-size:25px;margin-bottom:7px}.module-card p{font-size:13px;line-height:1.6;color:var(--muted);min-height:40px}.mini-progress{height:6px;background:#edf1e7;border-radius:10px;overflow:hidden;margin:17px 0 8px}.mini-progress i{display:block;background:var(--green);height:100%;border-radius:10px}.module-card .btn{width:100%;background:var(--tint);color:var(--ink);margin-top:18px;text-align:left;display:flex;justify-content:space-between}.bottom-note{font-size:12px;color:var(--muted);line-height:1.7;padding-top:23px}.back{background:none;border:0;padding:0;color:var(--muted);font-size:13px;font-weight:750;min-height:44px}.page-heading{margin:10px 0 25px}.page-heading h1{margin-top:10px}.page-heading p{margin-top:12px;color:var(--muted);line-height:1.7;font-size:15px}.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:23px 0}.stat{background:white;border:1px solid var(--line);border-radius:17px;padding:19px}.stat strong{display:block;font-size:28px;letter-spacing:-.05em;margin-bottom:5px}.stat span{font-size:10px;font-weight:750;color:var(--muted)}.rule{background:#edf2e1;border-radius:16px;padding:17px 20px;font-size:13px;line-height:1.7;margin-bottom:20px}.levels{display:grid;gap:12px}.level{background:white;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;gap:17px;align-items:center}.level.locked{background:#f0f2e9;color:#7d887e}.level-num{flex-shrink:0;width:48px;height:48px;display:grid;place-items:center;border-radius:15px;font-weight:850;background:var(--tint)}.level h3{font-size:17px;margin-bottom:6px}.level .small{font-size:12px;color:var(--muted)}.level .btn{margin-left:auto;white-space:nowrap;font-size:13px;padding:10px 16px}.weak-list{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}.weak-list h3{font-size:18px;margin-bottom:10px}.weak-fact{padding:12px 0;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #edf1e7;font-size:13px}.weak-fact:last-child{border:0}
+
+.play-top{margin-bottom:20px}.play-top h2{font-size:24px}.level-progress{height:10px;border-radius:10px;background:#e3ead9;overflow:hidden;margin:15px 0 9px}.level-progress div{height:100%;background:var(--green);transition:width .4s}.question-card{background:white;border:1px solid var(--line);border-radius:26px;padding:27px;text-align:center;box-shadow:0 7px 0 #173a3505}.question{font-size:clamp(48px,6vw,78px);font-weight:850;letter-spacing:-.045em;line-height:1.3;margin:17px 0 21px;font-variant-numeric:tabular-nums}.answer-row{display:flex;justify-content:center;gap:12px}.answer-row input{width:155px;min-width:0;text-align:center;background:#fafcf6;border:2px solid #ccd9c0;border-radius:16px;font-size:36px;font-weight:750;color:var(--ink);padding:10px}.answer-row input:disabled{background:#f0f3e8}.answer-row .btn{font-size:18px;min-width:135px}.feedback{min-height:27px;margin-top:16px;font-weight:750;color:var(--green);line-height:1.5}.feedback.bad{color:#a54e30}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:350px;margin:19px auto 0}.keypad button{border:1px solid #e2e8d9;background:#f1f4eb;border-radius:11px;font-size:21px;font-weight:700;height:48px}.keypad .minor{font-size:13px}.scoring{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:19px;font-size:11px;color:var(--muted)}.scoring span{background:#f5f6ef;padding:7px 10px;border-radius:8px}.timer{background:#ece5fa;color:#635287;font-weight:850}.timer.urgent{background:#ffe2d0;color:#9b442a;animation:pulse 1s infinite}.streak{background:#fff0dc;color:#8e5d22}.finish{background:white;border:1px solid var(--line);border-radius:26px;padding:33px 24px;text-align:center;overflow:hidden}.big-trophy{height:125px;width:125px;margin:5px auto 17px}.finish h1{font-size:42px;margin:13px 0}.finish p{line-height:1.7;color:var(--muted)}.finish .stats-row{max-width:540px;margin:24px auto}.prize-banner{max-width:520px;margin:22px auto;background:#f0f5dc;border:1px dashed #bccc87;border-radius:16px;padding:18px;font-size:14px;line-height:1.6}.finish-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:21px}.tabs button{border:1px solid var(--line);background:white;border-radius:100px;padding:11px 17px;font-size:13px;font-weight:750}.tabs .selected{background:var(--green);border-color:var(--green);color:white}.trophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 28px}.trophy{background:white;border:1px solid var(--line);border-radius:19px;padding:20px 12px;text-align:center}.trophy svg{width:76px;height:76px;margin-bottom:10px}.trophy h3{font-size:14px;margin-bottom:7px;letter-spacing:-.025em}.trophy.locked{background:#f0f2e9;opacity:.55}.trophy.locked svg{filter:grayscale(1)}.badges{display:flex;gap:12px;flex-wrap:wrap;margin:17px 0 25px}.badge{border:1px solid #ded7b8;background:#fff8df;border-radius:13px;padding:14px;font-size:13px;font-weight:750}.badge.locked{background:#ecefe6;color:#7d897d;border-color:var(--line)}.editor-card{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;margin-bottom:18px}.field-label{display:block;font-size:13px;font-weight:800;margin-bottom:13px}.text-field{background:#fcfdf8;border:1px solid #ccd8c2;border-radius:12px;padding:12px 14px;min-height:46px;width:100%;color:var(--ink)}.shape-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shape-button{background:#f7f9f1;border:2px solid #e2e8d9;border-radius:17px;padding:7px;font-size:12px;font-weight:750}.shape-button svg{display:block;width:100%;height:72px}.shape-button.selected{border-color:var(--green);background:#e8f2d9}.color-row{display:flex;gap:12px;flex-wrap:wrap}.color-button{height:43px;width:43px;border:3px solid transparent;box-shadow:inset 0 0 0 3px #ffffff80;border-radius:50%}.color-button.selected{border-color:var(--ink);outline:3px solid #e2ecd6}.personality-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.personality{border:2px solid var(--line);border-radius:15px;background:white;padding:15px;text-align:left}.personality strong{display:block;font-size:14px;margin-bottom:6px}.personality span{font-size:12px;color:var(--muted)}.personality.selected{background:#edf4e3;border-color:var(--green)}.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.shop-card{background:white;border:1px solid var(--line);border-radius:21px;padding:21px}.shop-art{height:100px;border-radius:14px;background:#f0f3e9;display:grid;place-items:center;margin-bottom:17px}.shop-art svg{height:85px;width:120px}.shop-card h3{font-size:18px}.shop-card .btn{width:100%;margin-top:16px;font-size:13px;padding:11px}.overlay{position:fixed;inset:0;background:#173a3580;backdrop-filter:blur(5px);z-index:20;display:flex;align-items:center;justify-content:center;padding:20px}.modal{max-width:490px;width:100%;max-height:90vh;overflow:auto;background:var(--paper);border:1px solid white;border-radius:27px;padding:32px;box-shadow:0 30px 100px #113c3540}.modal h2{font-size:30px;margin:16px 0}.modal p{line-height:1.7;color:var(--muted);margin-bottom:20px}.modal input{margin-bottom:16px}.modal .btn{width:100%}.modal .row .btn{width:auto;flex:1}.settings-option{padding:17px 0;border-bottom:1px solid var(--line)}.settings-option input[type=checkbox]{width:23px;height:23px;margin:0}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:40;padding:14px 22px;background:var(--ink);color:white;border-radius:14px;font-size:14px;box-shadow:0 8px 30px #0002;max-width:90vw}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:30}.confetti i{position:absolute;top:-30px;width:10px;height:16px;animation:fall 2.8s ease-in forwards}.hidden{display:none!important}.sr-only{position:absolute;clip:rect(0,0,0,0);height:1px;width:1px;overflow:hidden}.storage-warning{padding:12px;background:#ffe8ca;text-align:center;font-size:13px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.1)}}@keyframes jump{0%,100%{transform:translateY(0)}45%{transform:translateY(-24px) rotate(-7deg)}70%{transform:translateY(-8px) rotate(7deg)}}@keyframes wobble{30%{transform:rotate(-6deg)}70%{transform:rotate(6deg)}}@keyframes pulse{50%{opacity:.6}}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(800deg)}}
+@media(max-width:1100px){.header{padding:0 24px;gap:12px}.brand{font-size:17px}.nav button{padding:11px 9px;font-size:12px}.layout{padding:26px 24px;grid-template-columns:minmax(0,1fr) 255px;gap:20px}.hero{padding:28px}.hero-copy{width:90%}.hero-art{right:-95px;opacity:.65}.module-card{padding:19px}.module-card>.pill{right:15px;top:21px}.tutor-stage{height:195px}.tutor-art{width:175px;height:175px}.bubble{font-size:14px}.question-card{padding:22px}.question{font-size:59px}.level{gap:12px;padding:15px}.level .btn{padding:10px}}
+@media(max-width:800px){.header{height:auto;min-height:85px;flex-wrap:wrap;padding:16px 20px}.nav{order:3;width:100%;justify-content:space-between}.nav button{font-size:13px}.layout{padding:22px 18px;grid-template-columns:minmax(0,1fr) 225px;gap:16px}.hero{min-height:245px;padding:25px}.hero h1{font-size:34px}.hero-copy{width:100%}.hero-art{opacity:.2}.module-grid{grid-template-columns:1fr}.module-card p{min-height:0}.tutor-top{padding:16px 14px 0}.tutor-stage{height:160px}.tutor-art{width:150px;height:150px}.bubble{font-size:13px;padding:14px;margin:0 12px 13px}.tutor-controls{padding:0 12px 12px;gap:5px}.toggle{font-size:11px;padding:8px}.stat{padding:13px}.stat strong{font-size:24px}.stats-row{gap:8px}.question-card{padding:20px 15px}.question{font-size:46px}.answer-row input{width:110px;font-size:30px}.answer-row .btn{min-width:95px;font-size:16px;padding:12px}.level{flex-wrap:wrap}.level .btn{margin-left:auto}.trophy-grid{grid-template-columns:1fr 1fr}.shop-grid{grid-template-columns:1fr}.shape-grid{grid-template-columns:1fr 1fr}.personality-grid{grid-template-columns:1fr}.finish{padding:27px 17px}.finish h1{font-size:34px}}
+@media(max-width:600px){.header{padding:13px 16px}.brand{font-size:16px;gap:8px}.brand-mark{height:37px;width:37px}.header>.icon-btn{height:39px;width:39px}.coin{font-size:11px;padding:7px 9px}.coin-label{display:none}.nav button{padding:10px 8px}.layout{display:flex;flex-direction:column}.main{order:2}.tutor-panel{order:1;position:relative;top:0;display:grid;grid-template-columns:95px 1fr;align-self:stretch;border-radius:20px}.tutor-top{grid-column:2;padding:12px 13px 0}.tutor-top .eyebrow{font-size:8px}.tutor-top strong{font-size:14px;margin-top:3px}.tutor-stage{grid-row:1/4;grid-column:1;height:150px;border-radius:18px}.tutor-art{width:105px;height:130px}.tutor-stage:after{width:65px;bottom:18px}.bubble{grid-column:2;font-size:12px;min-height:45px;margin:8px 12px;padding:10px}.bubble:before{display:none}.tutor-controls{grid-column:2;padding:0 12px 12px}.toggle{min-height:33px;padding:6px}.support-note{grid-column:1/3;padding:0 12px 10px;font-size:9px}.module-grid{grid-template-columns:1fr 1fr;gap:12px}.module-card{padding:17px}.module-card h3{font-size:20px}.module-card>.pill{position:static;padding:4px 7px;margin-bottom:11px}.symbol{height:43px;width:43px;font-size:27px;float:right}.module-card p{clear:both;font-size:12px}.module-card .btn{padding:12px;font-size:12px}.hero{min-height:230px;margin-top:17px}.hero p{font-size:14px}.hero-art{right:-50px}.welcome-line .eyebrow{font-size:8px}.welcome-line .pill{font-size:10px}.section-head .small{font-size:10px}.section-head h2{font-size:22px}.shape-grid{grid-template-columns:repeat(3,1fr)}.shop-grid{grid-template-columns:1fr 1fr}.personality-grid{grid-template-columns:1fr 1fr}.trophy-grid{grid-template-columns:repeat(3,1fr);gap:8px}.trophy{padding:15px 6px}.trophy svg{height:62px;width:62px}.trophy h3{font-size:12px}.question{font-size:58px}.keypad button{height:51px}.play-top h2{font-size:20px}.page-heading{margin-top:0}.stat{padding:13px 10px}.stat span{font-size:9px}.editor-card{padding:20px}.level .btn{min-width:85px}.finish h1{font-size:36px}}
+@media(max-width:600px){.playing .tutor-panel{position:sticky;top:0;z-index:10;box-shadow:0 5px 20px #173a3510}.playing .support-note{display:none}.playing .tutor-stage{height:140px}.playing .bubble{max-height:130px;overflow:auto}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.confetti{display:none}}
+.voice-slider{margin-top:21px}.voice-slider label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:12px}.voice-slider input{width:100%;min-height:28px;accent-color:var(--green);cursor:pointer}select.text-field{font:inherit;max-width:100%}#voiceEditor .btn{font-size:13px}#voiceStatus{min-height:38px}
+.answer-row.has-next{gap:8px}.answer-row.has-next #answer{width:110px;min-width:60px;flex:0 1 110px}.answer-row.has-next #checkAnswer{min-width:76px;padding:12px 10px;font-size:15px}.answer-row.has-next #nextQuestion{position:relative;overflow:hidden;min-width:104px;max-width:155px;flex:0 1 155px;padding:12px 11px;font-size:14px;white-space:normal;line-height:1.35}.auto-progress{display:none;position:absolute;bottom:0;left:0;right:0;height:4px;background:#d5e3c5;overflow:hidden}.auto-progress i{display:block;height:100%;background:var(--green);width:100%}.auto-countdown .auto-progress,.auto-waiting .auto-progress{display:block}.auto-countdown .auto-progress i{transform-origin:left;animation:roll-on var(--auto-ms,2000ms) linear forwards}.auto-waiting .auto-progress i{width:35%;animation:waiting-response 1.2s ease-in-out infinite alternate}@keyframes roll-on{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes waiting-response{from{transform:translateX(0)}to{transform:translateX(180%)}}@media(max-width:380px){.answer-row.has-next{gap:5px}.answer-row.has-next #answer{min-width:48px}.answer-row.has-next #nextQuestion{min-width:96px;padding:10px 7px;font-size:13px}.answer-row.has-next #checkAnswer{min-width:68px;font-size:14px;padding:10px 7px}}
+</style></head><body>
+<div id="storageWarning" class="storage-warning hidden">This browser cannot save progress. Keep this tab open to continue your quest.</div>
+<header class="header"><div class="brand"><span class="brand-mark">✦</span><span id="brandName">Levi's Math Quest</span></div><nav class="nav" aria-label="Main navigation"><button data-nav="home">The adventure</button><button data-nav="trophies">Trophy case</button><button data-nav="shop">Prize shop</button><button data-nav="editor">My tutor</button></nav><div class="pill coin" aria-label="LeviBucks balance"><b>L</b><span id="balance">0</span><span class="coin-label">LeviBucks</span></div><button class="icon-btn" id="settingsBtn" aria-label="Parent settings">⚙</button></header>
+<div class="layout"><main class="main" id="main"></main><aside class="tutor-panel" aria-label="Your math tutor"><div class="tutor-top row between"><div><div class="eyebrow muted">Your quest companion</div><strong id="tutorName">Pip</strong></div><span class="pill" id="personalityTag">Coach</span></div><div class="tutor-stage" id="tutorStage"><div class="tutor-art" id="tutorArt"></div></div><div class="bubble" id="bubble" aria-live="polite">Hey, explorer! Big adventures start with one little answer. Let's do this!</div><div class="tutor-controls"><button class="toggle" id="voiceToggle" aria-pressed="true">♫ Voice on</button><button class="toggle" id="micToggle" aria-pressed="false">Mic off</button></div><div class="support-note" id="voiceNote"></div></aside></div>
+<div id="modalRoot"></div><div class="toast hidden" id="toast" role="status"></div><div class="confetti" id="confetti" aria-hidden="true"></div><script>
+'use strict';
+
+// All progress stays on this device. No servers, dependencies, or tracking.
+const KEY='leviMathQuest.v1';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const modules={
+add:{name:'Addition',symbol:'+',color:'#e3edb9',desc:'Join forces. Make bigger numbers.',world:'Meadow of More',rank:'Addition Adventurer',groups:[[0,1,2],[3,4],[5,6],[7,8],[9,10],[11,12],'doubles','mixed','speed','speed'],names:['Little leaps','The stepping stones','High-five hills','Rainbow bridge','Make-ten mountain','The big-number trail','Double trouble','Meadow master','Speed sprinter','Lightning legend']},
+sub:{name:'Subtraction',symbol:'−',color:'#fbdcc6',desc:'Find the difference. Crack the code.',world:'Canyon of Clues',rank:'Difference Detective',groups:[[0,1,2],[3,4],[5,6],[7,8],[9,10],[11,12],'near','mixed','speed','speed'],names:['Tiny takeaways','Canyon clues','Secret steps','Hidden paths','Ten-point trail','The final footprints','Neighbor numbers','Canyon master','Speed scout','Lightning legend']},
+mul:{name:'Multiplication',symbol:'×',color:'#e3daf6',desc:'Power up with groups and patterns.',world:'Galaxy of Groups',rank:'Times-Table Titan',groups:[[0,1,2],[5,10],[3,4],[6],[7],[8,9],[11,12],'mixed','speed','speed'],names:['Rocket launch','High-five orbit','Double the double','Planet six','Lucky seven','Eight-nine nebula','Beyond ten','Galaxy master','Speed rocket','Lightning legend']},
+div:{name:'Division',symbol:'÷',color:'#cde6ef',desc:'Share the treasure. Every part counts.',world:'Islands of Sharing',rank:'Sharing Superstar',groups:[[1,2],[5,10],[3,4],[6],[7],[8,9],[11,12],'mixed','speed','speed'],names:['Fair-share shores','Treasure teams','Island explorers','Six-way split','Seven seas','The hidden harbor','Big treasure crews','Island master','Speed sailor','Lightning legend']}
+};
+const moduleIds=Object.keys(modules),colors=['#80c6a0','#a99bdb','#f5ae70','#78bdd2','#ed92b1','#b0cf62','#e5bb62','#8fafd0'],shapes=['owl','robot','dragon','cat','alien','slime'];
+const personalities={coach:{label:'Cheerful coach',short:'Coach',desc:'Big energy, bigger high-fives.',rate:1,pitch:1.03},wizard:{label:'Wise wizard',short:'Wizard',desc:'Calm clues and a little magic.',rate:.96,pitch:.98},pirate:{label:'Silly pirate',short:'Pirate',desc:'Arrr! An ocean of encouragement.',rate:1.01,pitch:1.01},robot:{label:'Cool robot',short:'Robot',desc:'Clear thinking. Maximum kindness.',rate:.99,pitch:.97}};
+const shopItems=[{id:'hat-star',name:'Stargazer hat',type:'hat',price:16,desc:'For wonderfully wizardy thinking.'},{id:'hat-crown',name:'Quest crown',type:'hat',price:30,desc:'Every explorer deserves a crown.'},{id:'glasses',name:'Brainy specs',type:'glasses',price:12,desc:'A sharp look for a sharp mind.'},{id:'cape',name:'Super-thinker cape',type:'cape',price:24,desc:'Not all heroes wear capes. Yours can.'},{id:'bg-space',name:'Starlight station',type:'background',price:20,desc:'Take your tutor out of this world.'},{id:'bg-sunset',name:'Peachy sunset',type:'background',price:18,desc:'A golden-hour thinking spot.'},{id:'bg-forest',name:'Enchanted forest',type:'background',price:22,desc:'A leafy hideaway for bright ideas.'}];
+const fresh=()=>({version:1,name:'',balance:0,voice:true,sound:true,mic:false,questStreak:0,speech:{voiceURI:'auto',rate:null,pitch:null},tutor:{name:'Pip',shape:'owl',color:colors[0],personality:'coach',hat:'',glasses:false,cape:false,background:''},purchases:[],modules:Object.fromEntries(moduleIds.map(id=>[id,{unlocked:0,completed:[],results:{},badges:[],stats:{seen:0,firstCorrect:0,seconds:0,facts:{}}}]))});
+let save=fresh(),canSave=true;
+try{const old=JSON.parse(localStorage.getItem(KEY)||'null');if(old&&old.version===1){save={...fresh(),...old,speech:{...fresh().speech,...old.speech},tutor:{...fresh().tutor,...old.tutor}};for(const id of moduleIds){const d=fresh().modules[id];save.modules[id]={...d,...old.modules?.[id],stats:{...d.stats,...old.modules?.[id]?.stats}};}if(!personalities[save.tutor.personality])save.tutor.personality='coach';if(!shapes.includes(save.tutor.shape))save.tutor.shape='owl';if(!colors.includes(save.tutor.color))save.tutor.color=colors[0];}}catch(e){canSave=false;}
+let screen='home',selectedModule='add',game=null,timerHandle=null,lastResult=null,recognition=null,listening=false,currentBubble='',toastHandle=null,audio;
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(save));canSave=true;}catch(e){canSave=false;}$('#storageWarning').classList.toggle('hidden',canSave);$('#balance').textContent=save.balance;$('#brandName').textContent=(save.name||'Levi')+"'s Math Quest";}
+function money(n){save.balance=Math.max(0,save.balance+n);persist();}
+function toast(text){$('#toast').textContent=text;$('#toast').classList.remove('hidden');clearTimeout(toastHandle);toastHandle=setTimeout(()=>$('#toast').classList.add('hidden'),3200);}
+function say(text,kind='',read=true){if(!read)cancelSpeech();currentBubble=text;$('#bubble').textContent=currentBubble;$('#bubble').className='bubble '+kind;const a=$('#tutorArt');a.classList.remove('happy','thinking');void a.offsetWidth;if(kind)a.classList.add(kind==='success'?'happy':'thinking');return read?speak(currentBubble):quietSpeech();}
+function sound(kind){if(!save.sound)return;try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();audio.resume();const notes=kind==='win'?[523,659,784,1046]:kind==='correct'?[523,784]:[330,294];notes.forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.12;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.09,t+.015);g.gain.exponentialRampToValueAtTime(.001,t+.21);o.connect(g);g.connect(audio.destination);o.start(t);o.stop(t+.23);});}catch(e){}}
+function tier(i){return['Bronze','Bronze','Silver','Silver','Gold','Gold','Platinum','Platinum','Diamond','Diamond'][i];}
+function mastery(id){return save.modules[id].completed.length;}
+function totalMastered(){return moduleIds.reduce((n,id)=>n+mastery(id),0);}
+function rank(id){const n=mastery(id);return n>=10?'Lightning Legend':n>=8?modules[id].rank:n>=5?'Number Ninja':n>=2?'Pattern Pathfinder':'Bright Beginner';}
+function shuffled(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function accessories(t){return`${t.hat==='hat-star'?'<path d="M66 52L100 3l35 49z" fill="#655292" stroke="#193d3b" stroke-width="3"/><path d="M64 52h72" stroke="#d8f578" stroke-width="8" stroke-linecap="round"/><path d="m101 18 3 7 8 1-6 5 2 7-7-4-6 4 1-7-5-5 7-1z" fill="#f4d46d"/>':t.hat==='hat-crown'?'<path d="M65 49 59 17l24 17 17-23 17 23 24-17-6 32z" fill="#f4ce5f" stroke="#8e712b" stroke-width="3"/><circle cx="100" cy="37" r="4" fill="#dc8a67"/>':''}${t.glasses?'<g fill="none" stroke="#244347" stroke-width="5"><rect x="56" y="69" width="38" height="29" rx="10"/><rect x="106" y="69" width="38" height="29" rx="10"/><path d="M94 79h12M49 77h7m88 0h7"/></g>':''}`;}
+function avatar(t=save.tutor){let body='';const c=t.color,face='<g class="eyes"><ellipse cx="77" cy="84" rx="6" ry="8" fill="#193d3b"/><ellipse cx="123" cy="84" rx="6" ry="8" fill="#193d3b"/><circle cx="79" cy="81" r="2" fill="white"/><circle cx="125" cy="81" r="2" fill="white"/></g><path d="M89 107q11 12 22 0" stroke="#193d3b" fill="none" stroke-width="4" stroke-linecap="round"/><ellipse cx="63" cy="102" rx="9" ry="5" fill="#ed9893" opacity=".6"/><ellipse cx="137" cy="102" rx="9" ry="5" fill="#ed9893" opacity=".6"/>';
+if(t.shape==='owl')body=`<path d="M56 59 43 28l34 17q23-10 46 0l34-17-13 31q18 25 12 61-7 44-56 44t-56-44q-6-35 12-61z" fill="${c}" stroke="#193d3b" stroke-width="3"/><ellipse cx="100" cy="130" rx="32" ry="25" fill="#ffffff60"/><ellipse cx="77" cy="81" rx="23" ry="26" fill="#ffffff80"/><ellipse cx="123" cy="81" rx="23" ry="26" fill="#ffffff80"/><path d="m94 99 6 10 6-10" fill="#d89b45"/><path d="M47 110q-15 17 2 32M153 110q15 17-2 32" stroke="#193d3b" stroke-width="3" fill="none"/><path d="M73 164v9m54-9v9" stroke="#d09443" stroke-width="9" stroke-linecap="round"/>${face}`;
+if(t.shape==='robot')body=`<path d="M100 43V25" stroke="#193d3b" stroke-width="4"/><circle cx="100" cy="22" r="8" fill="#f2d86f" stroke="#193d3b" stroke-width="3"/><rect x="49" y="45" width="102" height="83" rx="22" fill="${c}" stroke="#193d3b" stroke-width="3"/><rect x="57" y="61" width="86" height="44" rx="16" fill="#ffffff90"/><rect x="65" y="132" width="70" height="34" rx="9" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="M55 138 43 153m102-15 12 15M80 167v8m40-8v8" stroke="#193d3b" stroke-width="9" stroke-linecap="round"/><circle cx="100" cy="147" r="7" fill="#f4d876"/>${face}`;
+if(t.shape==='dragon')body=`<path d="M59 108Q11 66 22 48l37 15 10 35m72 10q48-42 37-60l-37 15-10 35" fill="#cfdea8" stroke="#193d3b" stroke-width="3"/><path d="M68 54 63 26l22 19m30 0 22-19-5 28" fill="#e4c264" stroke="#193d3b" stroke-width="3"/><path d="M56 72q0-28 44-28t44 28v49q0 44-44 44t-44-44z" fill="${c}" stroke="#193d3b" stroke-width="3"/><ellipse cx="100" cy="136" rx="26" ry="25" fill="#ffffff60"/><path d="M136 149q37 24 35-11-13 10-25-12" fill="${c}" stroke="#193d3b" stroke-width="3"/>${face}`;
+if(t.shape==='cat')body=`<path d="M52 76 47 27l38 23q15-5 30 0l38-23-5 49q12 22-1 44-10 18-47 18t-47-18Q40 98 52 76z" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="m57 45 5 23 14-12m67-11-5 23-14-12" fill="#f4b6b6"/><path d="M72 136q-10 26 2 34h52q12-8 2-34" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="M131 158q39 9 29-18" stroke="${c}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="M47 98 30 94m17 13-17 5m123-14 17-4m-17 13 17 5" stroke="#193d3b" stroke-width="2"/>${face}<path d="m95 98 5 5 5-5z" fill="#a16071"/>`;
+if(t.shape==='alien')body=`<path d="M71 55 62 27m67 28 9-28" stroke="#193d3b" stroke-width="4"/><circle cx="60" cy="23" r="9" fill="${c}" stroke="#193d3b" stroke-width="3"/><circle cx="140" cy="23" r="9" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="M43 81q0-39 57-39t57 39q0 45-57 53-57-8-57-53z" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="M78 131q-12 25-2 36h48q10-11-2-36" fill="${c}" stroke="#193d3b" stroke-width="3"/><path d="M74 140 54 153m72-13 20 13" stroke="${c}" stroke-width="10" stroke-linecap="round"/>${face}`;
+if(t.shape==='slime')body=`<path d="M30 144q0-22 17-45 8-18 11-32 5-33 42-33t42 33q3 14 11 32 17 23 17 45 0 29-26 22-15 14-30 2-14 14-28 0-17 12-30-2-26 7-26-22z" fill="${c}" stroke="#193d3b" stroke-width="3"/><ellipse cx="81" cy="54" rx="15" ry="7" fill="#ffffff60" transform="rotate(-20 81 54)"/>${face}`;
+return`<svg viewBox="0 0 200 200" role="img" aria-label="${esc(t.shape)} tutor">${t.cape?'<path d="M64 102 25 179q75-20 150 0l-39-77z" fill="#a686ce" stroke="#634e86" stroke-width="3"/>':''}${body}${accessories(t)}</svg>`;}
+function updateTutor(){const t=save.tutor;$('#tutorName').textContent=t.name;$('#personalityTag').textContent=personalities[t.personality].short;$('#tutorArt').innerHTML=avatar();$('#tutorStage').className='tutor-stage '+t.background.replace('bg-','');$('#voiceToggle').textContent=window.speechSynthesis?(save.voice?'♫ Voice on':'♫ Voice off'):'Text only';$('#voiceToggle').setAttribute('aria-pressed',save.voice);$('#micToggle').setAttribute('aria-pressed',save.mic);$('#micToggle').textContent=SpeechRecognition?(save.mic?'Mic on':'Mic off'):'Mic unavailable';}
+function trophySVG(level,locked=false){const hues=['#c68c61','#c68c61','#acb8c3','#acb8c3','#e9bf50','#e9bf50','#8fcac2','#8fcac2','#ad97dc','#80c8e0'],c=hues[level];return`<svg viewBox="0 0 120 120" role="img" aria-label="${locked?'Locked':'Earned'} trophy"><circle cx="60" cy="59" r="55" fill="${c}20"/><path d="M35 28H19v12q0 24 24 24m42-36h16v12q0 24-24 24" fill="none" stroke="${c}" stroke-width="8"/><path d="M33 18h54v27q0 30-27 35-27-5-27-35z" fill="${c}"/><path d="M60 80v15M41 101h38" stroke="${c}" stroke-width="9" stroke-linecap="round"/><path d="m60 32 5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="#ffffff90"/>${locked?'<rect x="48" y="48" width="24" height="22" rx="5" fill="#50645c"/><path d="M53 49v-5a7 7 0 0 1 14 0v5" fill="none" stroke="#50645c" stroke-width="4"/>':''}</svg>`;}
+const heroArt=()=>`<svg class="hero-art" viewBox="0 0 310 275" aria-hidden="true"><circle cx="207" cy="133" r="89" fill="none" stroke="#9dc1a3" stroke-dasharray="4 10"/><ellipse cx="208" cy="136" rx="119" ry="49" transform="rotate(-37 208 136)" stroke="#729d86" fill="none"/><circle cx="209" cy="133" r="59" fill="#d8f578"/><circle cx="193" cy="112" r="11" fill="#c1df60"/><circle cx="231" cy="148" r="16" fill="#c1df60"/><circle cx="179" cy="148" r="7" fill="#c1df60"/><rect x="78" y="52" width="52" height="52" rx="17" fill="#b8a2e8" transform="rotate(-14 104 78)"/><text x="104" y="88" text-anchor="middle" fill="#283d3c" font-size="35" font-family="sans-serif">×</text><rect x="225" y="202" width="48" height="48" rx="16" fill="#ffb482" transform="rotate(14 249 226)"/><text x="249" y="237" text-anchor="middle" fill="#283d3c" font-size="36">+</text><path d="m258 41 5 10 11 3-11 4-5 10-4-10-11-4 11-3zM113 193l4 8 8 3-8 3-4 8-3-8-9-3 9-3z" fill="#d8f578"/><circle cx="58" cy="146" r="4" fill="#ffb482"/><circle cx="272" cy="102" r="4" fill="#b8a2e8"/></svg>`;
+
+// Handwritten personality banks. Each category has its own no-repeat shuffle bag.
+const dialogueBanks={coach:{},wizard:{},pirate:{},robot:{}};
+const bankLines=s=>s.trim().split('\n').map(x=>x.trim()).filter(Boolean);
+const bags=new Map();
+function addBank(personality,categories){for(const [key,text] of Object.entries(categories))dialogueBanks[personality][key]=bankLines(text);}
+function dialogueContext(extra={}){const g=game,f=g?.current||{},r=lastResult;return{name:save.name||'Levi',tutor:save.tutor.name,a:f.a??0,b:f.b??0,answer:f.answer??0,fact:f.key||'this fact',streak:g?.streak||0,balance:save.balance,remaining:Math.max(0,12-(g?.originalsDone||0)),level:g?modules[g.id].names[g.level]:r?modules[r.id].names[r.level]:'your next level',world:g?modules[g.id].world:modules[selectedModule].world,wins:g?.firstCorrect||0,seconds:g?.speed?Math.max(0,Math.ceil(g.limit-speedElapsed(g))):0,...extra};}
+function line(category,extra={},personality=save.tutor.personality){const pool=dialogueBanks[personality][category]||dialogueBanks[personality].intro,key=personality+':'+category;let bag=bags.get(key);if(!bag)bag={left:[],last:-1};if(!bag.left.length){bag.left=shuffled(pool.map((_,i)=>i));if(bag.left.length>1&&bag.left[bag.left.length-1]===bag.last)[bag.left[0],bag.left[bag.left.length-1]]=[bag.left[bag.left.length-1],bag.left[0]];}const i=bag.left.pop();bag.last=i;bags.set(key,bag);const context=dialogueContext(extra);return pool[i].replace(/\{(\w+)\}/g,(_,k)=>String(context[k]??''));}
+function chatter(category,extra={},kind='',read=true){const text=line(category,extra);say(text,kind,read);return text;}
+const cardPrompts=bankLines(`Your move, number explorer.
+A little thinking, a big discovery.
+What pattern can you spot?
+One fact. One fresh chance.
+Take a look. You know more than you think.
+Find your starting point.
+Ready when you are, {name}.
+Picture the numbers working together.
+No rush. Give your brain a moment.
+Let’s solve this little mystery.
+Numbers ready. Explorer ready?
+Try a strategy you know.
+Think it through, then check.
+A new puzzle just landed.
+Your next discovery is right here.
+What do these numbers tell you?
+Make your best thinking visible.
+Quiet thinking time.
+Take a breath. Find the pattern.
+The answer is waiting to be found.`);
+let cardPromptBag=[],lastCardPrompt='';
+function cardPrompt(){if(!cardPromptBag.length){cardPromptBag=shuffled([...cardPrompts]);if(cardPromptBag[cardPromptBag.length-1]===lastCardPrompt)[cardPromptBag[0],cardPromptBag[cardPromptBag.length-1]]=[cardPromptBag[cardPromptBag.length-1],cardPromptBag[0]];}lastCardPrompt=cardPromptBag.pop();return lastCardPrompt.replace('{name}',save.name||'Levi');}
+let idleHandle=null,lastIdleAt=-Infinity;
+function scheduleIdle(){clearTimeout(idleHandle);if(!game||game.finished||game.speed||game.locked)return;const current=game.current;idleHandle=setTimeout(()=>{if(screen==='play'&&game?.current===current&&!game.locked&&!game.finished&&!$('#modalRoot').innerHTML&&!listening&&document.visibilityState==='visible'&&performance.now()-lastIdleAt>45000){lastIdleAt=performance.now();chatter('idle',{},'',false);}},28000);}
+function stopIdle(){clearTimeout(idleHandle);}
+
+addBank('coach',{
+greeting:`Hey, {name}! Your brain called. It wants an adventure.
+Coach {tutor}, reporting for fun duty!
+Ready, {name}? We’re collecting little victories today.
+Welcome back! Let’s put those number powers to work.
+Shoelaces tied? Brain switched on? Let’s explore!
+A fresh quest and a fresh start. Nice to see you!
+{name}, you bring the thinking. I’ll bring the high-fives.
+Team {name} is officially in the building!
+Today’s mission: get curious, try things, grow stronger.
+Your adventure is warming up. Pick a world!
+Hey, superstar-in-training. What shall we tackle?
+The numbers are ready for their challenger.
+One small fact can start a very big adventure.
+Let’s give your future self something to cheer about.
+Hello, explorer! Your next “I did it!” is waiting.`,
+intro:`New puzzle, fresh energy!
+Your move, {name}. I’m in your corner.
+Can you spot a shortcut here?
+Give {fact} your best thinking.
+Let’s see what these numbers can do.
+Tiny challenge. Mighty brain.
+This one’s yours to explore.
+Find a pattern, then pounce!
+Ready for another little brain workout?
+Numbers on the field. You’re up!
+Start with what you already know.
+Deep breath. Eyes on the numbers.
+What’s your game plan for this one?
+The next stepping stone just appeared.
+Let’s turn a question mark into a discovery.
+Picture it. Count it. Crack it.
+A fresh fact just joined the adventure.
+Make room for one more good idea.
+You don’t need a cape for this superpower.
+Think first. Victory dance later.`,
+correct:`Boom! That’s good thinking, {name}.
+Nailed it! Two LeviBucks for your brainwork.
+That answer has championship energy!
+Nothing but net. Beautifully solved.
+Yes! {fact} = {answer}. Lock that one in.
+High-five through the screen!
+Your brain just did a little victory lap.
+Smooth move, number ninja.
+Two more LeviBucks. You’ve got {balance} now!
+That’s a keeper! Store that fact in your brain bank.
+Solved it like a pro explorer.
+Oh, that was a satisfying answer!
+Right on the money. The pretend money, obviously.
+Another good decision from Team {name}.
+Perfect fit! Those numbers clicked into place.
+Ka-pow! One less mystery in the universe.
+That’s how we do it. Clear thinking wins.
+Your practice is turning into power.
+Correct! I’d do a cartwheel, but I’m mostly pixels.
+A clean finish. Give yourself some credit!
+You found the answer and earned the cheers.
+Your brain muscles are showing.
+Nice! {answer} is exactly what we needed.
+That fact didn’t stand a chance against your thinking.
+Two LeviBucks earned. Adventure fuel acquired!`,
+rescue:`Yes! You used the clue. That’s a real win.
+Great adjustment, {name}. One LeviBuck rescued!
+You stayed with it and found the answer.
+That second try shows your brain is learning.
+Comeback complete! {answer} is right.
+A smart rethink beats giving up every time.
+The clue worked because you worked with it.
+You turned “not yet” into “got it”!
+That’s the power of another chance.
+Good correction. You earned that LeviBuck.
+You changed your approach and cracked it.
+Nice recovery! Learning is not a straight line.
+You found the path on try two. Count that progress.
+That answer took persistence. I noticed.
+Now that fact is a little less mysterious.
+One LeviBuck and one stronger connection.
+You listened, thought, and solved. Great teamwork.
+Way to bounce back, {name}!
+Second swing, solid hit!
+A retry isn’t a defeat. Look what it taught you.`,
+wrong:`Pause the victory dance. Let’s check the plan.
+Not this time, {name}. We can sort it out.
+That answer needs a rethink. Here’s your clue.
+Let’s trade that guess for a strategy.
+Hold up. The numbers need a different move.
+A miss is a clue, not the end of the game.
+Reset your stance. Try this approach.
+That doesn’t match this fact. Let’s unpack it.
+Good time to slow down and look closely.
+We’ve found a practice spot. Here’s a way through.
+Let’s check the operation before the answer.
+A little recalculation will help here.
+Not a match yet. You still have another chance.
+This puzzle needs one more careful look.
+Let’s give your brain a better starting point.
+Nope, not that number. Here’s something useful.
+Try a new route, not a harder guess.
+Keep your chin up. Work with this clue.
+The answer took a detour. Let’s bring it home.
+Stop, think, and try a smarter next move.`,
+wrongTwice:`Let’s learn this one together. It will return for practice.
+We’ll keep this fact on the training list.
+This one needs another lap, not a lecture.
+Here’s the answer and a way to remember it.
+A tricky fact spotted! We’ll meet it again.
+Let’s build a stepping stone for next time.
+We’re not done learning this one yet.
+Watch the strategy, then try it again later.
+This is a practice fact, not a label about you.
+Keep the clue. We’ll give this one a rematch.
+Some facts take extra visits. That’s normal.
+Here’s your replay. Notice how the numbers work.
+Let’s make this mistake useful.
+We found today’s brain-building challenge.
+One answer to study, one comeback to look forward to.`,
+cardCorrect:`Bullseye!
+Brainpower win!
+Beautifully solved!
+High-five!
+That clicked!
+Ninja move!
+Quest fuel earned!
+Right on target!
+Strong thinking!
+Number mystery solved!
+You cracked it!
+A tidy little victory!
+Nothing but net!
+Super work, {name}!
+Brain muscles flexed!
+Yes, explorer!
+That’s the one!
+Pattern power!
+Smooth solve!
+Victory lap!`
+});
+
+addBank('coach',{
+comeback:`Rematch time! You’ve got a new clue now.
+Here’s our old rival. Let’s try a new move.
+Welcome back, tricky fact. {name} has a plan.
+Remember the strategy? This is where it helps.
+You’ve seen this trail before. Find your footing.
+A comeback chance just landed.
+Let’s turn that earlier miss into a discovery.
+This fact gets another try, and so do you.
+Round two with a wiser explorer.
+Use what you learned on the first visit.
+Back for practice. No pressure, just progress.
+Same numbers, fresh thinking.
+Here’s your chance to test that clue.
+Let’s give this puzzle a friendly rematch.
+Look who’s back! Show this fact your new strategy.`,
+near:`Only {remaining} fresh facts left. Bring it home!
+The finish line is waving. {remaining} to go!
+{name}, you’re on the home stretch.
+Just {remaining} more first-round puzzles.
+You’ve explored most of the trail. Keep thinking clearly.
+We’re close! One careful answer at a time.
+The level flag is just ahead.
+Nearly there. Save some energy for a victory pose.
+Your last {remaining} fresh facts are waiting.
+Almost at base camp. Don’t skip the thinking!
+Home stretch, teammate. Smooth and steady.
+The next treasure is getting closer.
+You’ve come a long way this round.
+Just {remaining} new challenges between you and results.
+Finish strong, but there’s no need to rush.`,
+pass:`Level mastered! That’s your work paying off.
+{name}, you did it! {level} is yours.
+Achievement unlocked: a well-earned victory dance.
+You crossed that finish line with skill.
+That’s a proper “I did it!” moment.
+Hard work, smart thinking, level mastered.
+Another trail conquered. Take a proud breath.
+Team {name} just put a win on the board.
+You earned this celebration, every bit of it.
+The level is complete. Your brain did the heavy lifting.
+You met the challenge and kept your cool.
+That wasn’t luck. That was learning in action.
+Victory! Your next adventure is ready.
+You made it through {level}. Huge high-five!
+Mastery looks good on you, explorer.`,
+fail:`Not mastered yet. Let’s train the tricky facts and retry.
+You earned {wins} first-try wins. Ten opens the next trail.
+A practice round, not a verdict. We go again.
+Keep the lessons. Try a fresh set when you’re ready.
+We found what needs work. That’s useful information.
+The next level can wait. Your learning matters more.
+You’re building the skill, even before the trophy.
+Let’s come back with a sharper game plan.
+Today’s misses can become tomorrow’s easy ones.
+No need to be perfect to make progress.
+This round gave us clues. Let’s use them.
+Take a breath, {name}. A retry is a fresh start.
+You’re not starting from zero. You’ve learned things.
+A little more practice will strengthen this trail.
+Keep your LeviBucks and your courage. Try again.`,
+trophy:`New trophy! Make some room in that case.
+A {trophy} trophy, earned by your own brain.
+That shiny thing? Proof you kept going.
+Treasure unlocked! {level} gets a place in your collection.
+Your trophy case just got a little louder.
+Here comes a very well-earned {trophy} trophy!
+A new prize for Team {name}.
+You earned a trophy, not just a nice screenshot.
+That trophy has persistence written all over it.
+Collection upgrade! One more story of success.
+A shiny reminder that practice works.
+{name}, your new {trophy} trophy is ready.
+Look at that sparkle. You earned every bit.
+The trophy shelf has a new champion.
+Put this one somewhere proud in your collection.`,
+shop:`{item} acquired! Excellent quest fashion.
+Looking sharp, {name}. You earned that gear.
+Your brainwork paid for this little upgrade.
+New gear, same mighty thinker.
+A stylish use of pretend money!
+{item}? That’s an explorer with taste.
+Your tutor’s look just leveled up.
+Fashion side quest complete!
+A fresh look for the next big idea.
+You’ve got {balance} LeviBucks left for future treasure.
+That upgrade comes with extra imaginary swagger.
+Your hard-earned LeviBucks made this happen.
+New equipment unlocked. No real money needed.
+This adventure just got more colorful.
+I approve this purchase with a very serious high-five.`,
+urgency:`{seconds} seconds left. Stay calm and think clearly.
+Clock check! Choose accuracy over wild guesses.
+The countdown is low. One fact at a time.
+Smooth thinking, steady breathing. You’ve got this.
+A little time left. Use a fact you already know.
+Quick check: look at the operation first.
+Keep it steady, {name}. Don’t race your own brain.
+The clock is ticking, but panic isn’t a strategy.
+{seconds} seconds. Find the simplest route.
+Stay focused on this answer, not the whole clock.
+A smart shortcut beats a hurried guess.
+Final stretch. Trust the patterns you practiced.
+Breathe out, look closely, make your move.
+Whatever the clock says, this practice counts.
+Your next good answer matters more than a frantic tap.`,
+idle:`Need a starting point? Look for zero, one, or a double.
+You can take your time. Try picturing the groups.
+No rush, {name}. Break the fact into smaller pieces.
+If it feels big, start with one number you know.
+A quiet moment can be good thinking time.
+Try counting, drawing, or using your fingers.
+I’m here when you’re ready. No countdown in this level.
+One small step is enough to get started.
+Could an easier fact give you a clue?
+Read the operation sign out loud to yourself.
+Look for a pattern before reaching for a guess.
+Thinking break? Your quest will wait.
+Try explaining the question to an imaginary teammate.
+What would this look like with counters on a table?
+You don’t have to solve it instantly to solve it well.`,
+streak3:`Three in a row! Your engine is warming up.
+Hat trick, {name}! Keep the good thinking rolling.
+Three clean solves. That’s a rhythm!
+A triple scoop of brainpower.
+Three wins linked together. Nice focus!
+The streak meter just woke up: {streak}!`,
+streak5:`Five straight! High-fives are officially required.
+{name}, five in a row is some serious focus.
+A fistful of correct answers. Boom!
+Five-fact combo! Your practice is showing.
+That’s five. The number crowd goes wild!
+Five victories in formation. Captain of consistency!`,
+streak10:`TEN in a row! That’s a full double high-five.
+Double digits, {name}! What a run.
+Ten-answer combo. Legendary concentration!
+Your brain just bowled a ten-fact strike.
+Ten straight. I need more hands for these high-fives.
+A whole ten-pack of correct thinking!`,
+streak15:`{streak} in a row! This streak needs its own trophy parade.
+{name}, a {streak}-fact combo is next-level focus.
+Fifteen-plus! Your brain brought the fireworks.
+The streak has entered superhero territory: {streak}!
+A {streak}-answer victory train. All aboard!
+That’s {streak} straight. I’m running out of imaginary confetti!`
+});
+
+addBank('wizard',{
+greeting:`Welcome, {name}. A new page in your spellbook awaits.
+The tower door is open. Bring your curiosity.
+Ah, my apprentice! Which number mystery shall we explore?
+I’ve polished the thinking crystal. Your turn to shine.
+Welcome back. Knowledge grows one small spell at a time.
+{name}, your next discovery is closer than it appears.
+A bright mind has entered the tower. Splendid!
+The numbers have a story for us today.
+Your wand is optional. Your curiosity is essential.
+Come in, explorer. The puzzle lanterns are lit.
+A fresh quest has appeared in the spellbook.
+Today we turn questions into little sparks of understanding.
+Even grand wizards begin with simple facts.
+The library of numbers has saved you a seat.
+Hello, {name}. Let’s uncover a little everyday magic.`,
+intro:`A small mystery has appeared.
+What pattern hides in {fact}?
+Let your thoughts settle, then look closely.
+The next page holds a useful discovery.
+An easier fact may be the key.
+Imagine the numbers as little lanterns.
+One gentle spell of careful thinking.
+This puzzle is ready for your attention.
+Which clue will you use, apprentice?
+Let’s lift the curtain on these numbers.
+There’s no need to hurry the magic.
+A question mark is a door, not a wall.
+Read the sign. Notice what changes.
+Try a path you already understand.
+A new number riddle, just for you.
+Gather the facts you know.
+Your thinking wand is ready.
+Study the pattern beneath the surface.
+The spellbook turns to another challenge.
+Let curiosity do the first bit of work.`,
+correct:`Aha! The mystery opens.
+Beautifully reasoned, {name}.
+Two LeviBucks and a brighter spellbook.
+The numbers align! {answer} is right.
+A clear thought is its own kind of magic.
+That fact is now part of your toolkit.
+Splendid. You found the hidden pattern.
+A little spark of understanding, well earned.
+Correct! No enchanted calculator required.
+The tower bells approve of that answer.
+Well done, apprentice. Another puzzle illuminated.
+Your careful thinking made that look simple.
+A tidy solution to {fact}.
+The answer fits like a key in a lock.
+You’ve turned a question into knowledge.
+Two LeviBucks appear. Your balance is {balance}.
+A fine bit of number wizardry!
+That’s the sound of a new connection forming.
+The spell worked because your reasoning worked.
+A small victory with a very bright glow.
+Correct, {name}. The crystal is quite impressed.
+A page of your spellbook just grew stronger.
+Precisely {answer}. Nicely discovered.
+Another mystery neatly untangled.
+Well solved! Even my hat is impressed.`,
+rescue:`There it is! The clue led you through.
+A second attempt, a deeper understanding.
+One LeviBuck for a well-earned correction.
+You adjusted the spell and found {answer}.
+That is how an apprentice becomes wiser.
+The first path was blocked. You found another.
+Good learning, {name}. You used the clue.
+A patient rethink made the pattern clear.
+The mystery is solved on the second visit.
+You kept the lantern lit. Well done.
+A corrected answer is a new connection.
+You turned a wobble into a useful lesson.
+The spell needed one small adjustment.
+Now you know more than you did a moment ago.
+A thoughtful comeback. I’m glad you stayed with it.
+One LeviBuck, and a stronger memory.
+Your second answer shows real understanding.
+You followed the trail of clues successfully.
+That fact is becoming familiar, apprentice.
+You gave the idea another chance to click.`,
+wrong:`Not quite. Let us examine the pattern.
+The spell needs a small adjustment.
+Pause, apprentice. Here’s a clearer path.
+That number does not fit this particular puzzle.
+The crystal suggests a closer look.
+A wrong turn can reveal a useful clue.
+Let’s separate the mystery into smaller pieces.
+This answer needs another moment of thought.
+The operation sign is our first clue.
+We have another chance to untangle it.
+The numbers are asking us to try a new route.
+A little more care will help this spell.
+Not that answer. Follow this clue instead.
+Let’s return to a fact you already know.
+The pattern is still waiting to be uncovered.
+A gentle pause before your next attempt.
+This is a learning moment, not a locked door.
+We’ll use a clue, rather than a wish.
+Think of the meaning behind the symbol.
+Let’s light one small lantern at a time.`,
+wrongTwice:`Let’s study this spell before it returns.
+This fact belongs on our practice page.
+Some mysteries need more than one visit.
+I’ll show the pattern. Keep it for our next encounter.
+A useful lesson has appeared in the spellbook.
+We’ll revisit this fact with a clearer clue.
+Let understanding come before speed.
+This number riddle needs a little extra care.
+Here’s the answer and the path that leads to it.
+The spellbook keeps this one ready for a rematch.
+You are learning, even when the answer is shown.
+Watch the numbers carefully this time.
+Let’s turn the mistake into a memory aid.
+This clue will be useful when the fact returns.
+A patient wizard learns the tricky spells, too.`,
+cardCorrect:`Mystery illuminated!
+Spell complete!
+A brilliant discovery!
+The pattern opens!
+Number magic!
+Splendid reasoning!
+Crystal clear!
+A bright little victory!
+Knowledge unlocked!
+Your wand worked!
+Puzzle untangled!
+A fine solution!
+Spellbook upgraded!
+Correct, apprentice!
+The key fits!
+Wonderful discovery!
+Aha, {name}!
+Lantern lit!
+Precisely right!
+A clever bit of magic!`
+});
+
+addBank('wizard',{
+comeback:`Our earlier mystery returns. Remember the clue.
+This spell is ready for another thoughtful attempt.
+Same puzzle, a little more wisdom.
+Let’s try the path we just studied.
+A second visit to a familiar page.
+The number riddle has returned for practice.
+Use your new clue, apprentice.
+Here’s a chance to strengthen that connection.
+We’ve seen this pattern before.
+The spellbook has brought this fact back.
+A rematch, with a brighter lantern.
+Let’s see what the earlier clue taught us.
+A patient return can make a strong memory.
+The tricky spell is back. Take your time.
+Now approach this mystery with fresh eyes.`,
+near:`Only {remaining} new mysteries remain on this page.
+The final lanterns are just ahead.
+Your spellbook is nearly ready for its next chapter.
+A few more careful thoughts, apprentice.
+{name}, the end of this trail is in sight.
+Just {remaining} fresh facts before we review.
+The tower bells are getting ready.
+Nearly there. Keep your thinking gentle and clear.
+A new chapter waits beyond these final puzzles.
+Your last {remaining} first-round spells await.
+We’ve traveled far through this number story.
+The closing page is near.
+One careful discovery at a time, right to the end.
+The last stretch has its own quiet magic.
+Almost complete. Don’t hurry the final clues.`,
+pass:`Chapter mastered! Your spellbook grows.
+{name}, you have earned this moment of pride.
+The tower bells ring for your careful work.
+A whole level of mysteries, illuminated.
+Your knowledge has opened another door.
+That is mastery, apprentice. Well earned.
+A splendid finish to {level}.
+The learning crystal shines especially brightly.
+Your patience has turned into skill.
+One chapter complete, many adventures ahead.
+The next gate opens to your understanding.
+You’ve added a strong new spell to your collection.
+Stand tall, {name}. You did the thinking.
+A fine achievement, written into the spellbook.
+The mystery of {level} is now yours.`,
+fail:`This chapter needs another reading. That’s all.
+You found {wins} first-try answers. Ten opens the gate.
+A patient retry can strengthen these spells.
+Keep the clues. They will help next time.
+The spellbook is not judging you.
+Knowledge grows through revisiting, too.
+A pause is allowed before another attempt.
+This round showed us where to shine the lantern.
+You have not lost what you learned.
+Let’s study the tricky patterns and return.
+A wiser apprentice starts the next round.
+The gate remains, and so does your opportunity.
+Not mastered yet. A useful word, “yet.”
+Your next attempt begins with more knowledge.
+Even the grandest wizard revises a spell.`,
+trophy:`A {trophy} treasure joins your collection.
+The trophy shelf has a new piece of magic.
+Proof of your learning, cast in a shiny shape.
+Your new trophy glows with well-earned pride.
+A treasure for mastering {level}.
+The tower records your {trophy} achievement.
+{name}, this award belongs in your spellbook of wins.
+A new jewel in your collection of knowledge.
+Look at that shine. No enchantment needed.
+You earned a {trophy} trophy, apprentice.
+The treasury welcomes your newest achievement.
+A little monument to careful thinking.
+Another artifact of your growing skill.
+That trophy tells a story of persistence.
+The cabinet of wonders has a new resident.`,
+shop:`{item} acquired. A splendid magical accessory.
+The wardrobe of wonders approves.
+Your earned LeviBucks became a little enchantment.
+A new look for your next chapter.
+That suits a thoughtful adventurer.
+The treasury now holds {balance} LeviBucks.
+{item} is ready for your next expedition.
+Even a wise tutor enjoys a wardrobe upgrade.
+A charming choice, apprentice.
+Your companion has gained some extra sparkle.
+A well-earned treasure from the little shop.
+The outfit changed. The curiosity remains.
+Style magic, powered by your practice.
+A fine use of your quest earnings.
+No spell required. You earned this yourself.`,
+urgency:`{seconds} seconds remain. Keep your mind clear.
+The hourglass is low. Choose a familiar strategy.
+Let calm thinking guide these last moments.
+The sand is moving. One fact at a time.
+A simple spell is best under a short clock.
+Look closely before your next answer.
+Trust what you have practiced, apprentice.
+The hourglass need not rush your reasoning.
+A small breath can steady a busy mind.
+Use the easiest clue in front of you.
+{seconds} seconds. Focus on the next little step.
+The final grains are falling. Stay thoughtful.
+A wild guess is not a magic shortcut.
+Whatever the time, your learning stays with you.
+Keep the lantern steady through the final stretch.`,
+idle:`Could a smaller fact unlock this one?
+The spellbook suggests a picture or a few counters.
+No hourglass here. Think at your own pace.
+Try saying the operation in ordinary words.
+A known pattern may be hiding in plain sight.
+Take a breath. Start with what is certain.
+Even quiet thinking is part of the quest.
+Imagine the numbers as groups of little stones.
+Your fingers can be useful counting wands.
+There is no shame in a slower discovery.
+Look for zero, one, or a familiar double.
+The tower will wait while you think.
+One clear step is better than a hurried guess.
+Try teaching this fact to an imaginary owl.
+I’m nearby if the mystery needs a little patience.`,
+streak3:`Three sparks in a row! A pattern of success.
+A triple spell, neatly cast.
+Three lanterns lit, apprentice.
+Your first little constellation: {streak} correct.
+Three mysteries solved without a miss.
+A three-fact charm is taking shape.`,
+streak5:`Five shining answers. A powerful little spell!
+A five-lantern trail of clear thinking.
+Your focus is gathering magic, {name}.
+Five spells, all on target.
+A full handful of number discoveries.
+Five straight. The tower bells have noticed.`,
+streak10:`Ten in a row! A constellation of understanding.
+Double-digit magic, apprentice!
+Ten shining facts in your spellbook.
+The tower’s great bell rings for ten straight.
+A ten-spell chain. Remarkable focus!
+Ten answers, one brilliant trail.`,
+streak15:`{streak} straight! A whole sky of number magic.
+A {streak}-spell chain worthy of the grand library.
+Your {streak} answers have awakened the tower fireworks.
+Fifteen-plus! The spellbook needs an extra page.
+{name}, this {streak}-fact constellation is magnificent.
+A legendary run: {streak} mysteries solved in succession!`
+});
+
+addBank('pirate',{
+greeting:`Ahoy, {name}! A fresh sea of number treasure awaits.
+Captain {tutor} reporting. Ready to sail?
+Welcome aboard! Curiosity is the only ticket you need.
+The treasure map has a new question mark.
+Hoist the thinking sails, matey!
+Good to see you, {name}. Pick an island to explore.
+The crew’s ready. We’re missing only your brilliant ideas.
+Another day, another chest of number mysteries.
+No sea legs required. Just a willing brain.
+Welcome back to the S.S. Good Thinking.
+A new adventure has washed ashore.
+I packed the map. You packed the brainpower.
+Ready for treasure that doesn’t make your pockets heavy?
+All aboard for a little mathematical mischief.
+The horizon is full of possibilities, matey.`,
+intro:`A new number island, straight ahead!
+What’s your course through {fact}?
+Time to inspect the treasure map.
+Your move, captain of curiosity.
+Look for a shortcut through these waters.
+A little puzzle just climbed aboard.
+No guessing overboard. Try a strategy!
+Steady hands on the thinking wheel.
+What do the numbers tell you, matey?
+Let’s fish an answer out of this one.
+One riddle between us and more treasure.
+Read the sign before setting sail.
+A familiar fact could be your compass.
+This question mark needs an explorer.
+Scan the horizon for a useful pattern.
+Fresh numbers off the starboard bow!
+Think it through. The treasure can wait.
+You’re at the helm for this one.
+A new challenge has docked.
+Let’s sail from what you know to what you need.`,
+correct:`Treasure found! Fine thinking, {name}.
+Two LeviBucks hauled aboard!
+Right on course, matey.
+That answer deserves a captain’s salute.
+{answer} it is! The treasure map agrees.
+You cracked the chest without a crowbar.
+A tidy solve from a clever sailor.
+The crew cheers for that one!
+Correct! Your brain’s a very good compass.
+Another fact safely in the hold.
+We’ve got {balance} LeviBucks in the chest now.
+Shiver me timbers, that was well solved!
+A golden little discovery, matey.
+The parrot says “correct.” For once, it’s right.
+Aye! {fact} = {answer}.
+You navigated that puzzle beautifully.
+Two shiny pretend coins. No polishing required.
+That was a treasure-worthy thought.
+A clear course and a correct landing.
+The number seas are no match for your strategy.
+Nicely done! I nearly dropped my imaginary telescope.
+Another mystery walks the plank. Politely.
+{name}, your thinking just earned its sea legs.
+Correct! The answer was hiding in plain sight.
+A fine catch for the treasure ledger!`,
+rescue:`Aye! You corrected course and found it.
+One LeviBuck rescued from the waves.
+That’s a proper comeback, matey.
+The clue was your compass. Nicely used.
+Second voyage, successful landing!
+You sailed around the snag and reached {answer}.
+No shipwreck here. Just a useful correction.
+That fact is a little more familiar now.
+A steady rethink brought us home.
+The crew respects a sailor who tries again.
+You found another route to the treasure.
+A correction worth a captain’s nod.
+One more try, one stronger brain connection.
+{name}, you kept the ship moving.
+Back on course! There’s your LeviBuck.
+The first wave missed us. The second carried us in.
+You didn’t abandon the puzzle. Good sailing.
+A smart change of course, captain.
+That’s how explorers learn their maps.
+You turned a detour into a discovery.`,
+wrong:`Hold the anchor. We need a course correction.
+Not that island, matey. Here’s a clue.
+The compass points somewhere else.
+Let’s check the map before sailing again.
+That answer is off course. We can fix it.
+A little headwind. Nothing we can’t work through.
+Steady, sailor. Look at the operation sign.
+We found a snag. Try this route instead.
+Not the treasure yet. There’s another chance.
+Let’s trade a wild guess for a useful compass.
+The numbers need a different heading.
+No walking the plank over a mistake. Use this clue.
+Drop anchor for a moment of thinking.
+This chest needs a different key.
+Let’s steer back toward what you know.
+A wrong turn can improve the map.
+Keep your telescope on the numbers.
+That’s not the landing we wanted. Look closer.
+We’re still exploring. Here’s a better starting point.
+Take a breath, matey. Set a new course.`,
+wrongTwice:`Let’s mark this island for another visit.
+Here’s the map. We’ll sail this route again.
+This fact stays on the practice chart.
+A tricky current! Watch how we navigate it.
+We’ll study this treasure clue, then return.
+The answer is here. Notice the route to it.
+Not every island is conquered on the first voyage.
+This puzzle gets a rematch after more exploring.
+Keep this clue in your captain’s notebook.
+A little extra practice will steady this course.
+Let’s turn that snag into a better map.
+We’ll revisit this fact with a wiser crew.
+The sea is patient. We can learn this route.
+Here’s a useful correction for the ship’s log.
+One tricky treasure, saved for another attempt.`,
+cardCorrect:`Treasure found!
+Aye, captain!
+Right on course!
+Chest unlocked!
+Golden thinking!
+Shipshape answer!
+A clever catch!
+Crew-approved!
+Perfect landing!
+Brain booty earned!
+Map mystery solved!
+Two coins aboard!
+Fine sailing!
+Compass confirmed!
+A sparkling solve!
+You found the X!
+Captain’s salute!
+Anchor that fact!
+A tidy haul!
+Number treasure!`
+});
+
+addBank('pirate',{
+comeback:`We’re revisiting that tricky island.
+Same treasure, better map this time.
+Remember the clue from our earlier voyage?
+A rematch off the starboard bow!
+Back to this fact with a fresh compass.
+Here’s a second voyage, matey.
+Let’s test the route we just studied.
+This chest is back. You’ve got a new key.
+The practice current brought this one around.
+An old puzzle, a wiser captain.
+Use the clue in your ship’s log.
+Welcome back, tricky fact. We’re ready to learn.
+Steer carefully through this familiar water.
+The treasure map gives us another go.
+A friendly rematch with a stubborn island.`,
+near:`Only {remaining} fresh islands left to explore!
+The harbor is coming into view.
+Land nearly ahoy, {name}!
+Your last {remaining} first-round puzzles await.
+The finish flag is fluttering off the bow.
+We’re on the homeward tide.
+Just {remaining} new mysteries before we dock.
+Nearly there, captain. Keep a steady course.
+The treasure harbor is close.
+A few more careful moves through these waters.
+The last stretch of the map is unrolling.
+Soon we’ll check the captain’s log.
+One island at a time, right to the end.
+The crew is preparing the welcome-home banner.
+Almost at port. Keep your eyes on the numbers.`,
+pass:`Level mastered! Ring the ship’s bell!
+{name}, you sailed that quest like a captain.
+The crew is throwing a very tidy treasure party.
+{level} is charted and conquered.
+A successful voyage for the ship’s log.
+Hoist the victory flag. You earned it!
+The next island opens to your good thinking.
+That was skillful navigation, matey.
+Your practice brought the ship home.
+A whole level of number treasure, discovered.
+The harbor cheers for Captain {name}!
+A proud moment on the quarterdeck.
+We reached the goal with your brain at the helm.
+Victory ahoy! What a fine voyage.
+Another adventure mastered. Take a captain’s bow.`,
+fail:`This route needs another voyage. No shame in that.
+{wins} first-try wins aboard. Ten opens the next island.
+We’ve improved the map. Let’s sail it again.
+The tide turned, but your learning stays aboard.
+A fresh voyage will bring fresh chances.
+No captain learns every current at once.
+Keep the clues. They’re useful cargo.
+The crew believes in another attempt.
+We haven’t mastered this island yet.
+A short rest, then a wiser course.
+This practice belongs in the log, too.
+We found the rough waters. Now we can train for them.
+The treasure isn’t going anywhere, matey.
+Try a new set with your better map.
+Keep your LeviBucks. We’ll come back stronger.`,
+trophy:`A {trophy} trophy for the treasure hold!
+New treasure aboard, earned fair and square.
+That shiny award is yours, Captain {name}.
+The trophy chest just got heavier. Imaginarily.
+A fine prize for mastering {level}.
+Raise the {trophy} trophy where the crew can see!
+A new treasure with your hard work written on it.
+The quartermaster records one excellent achievement.
+No digging needed. Your thinking found this prize.
+A trophy worth a hearty cheer.
+That sparkle belongs in your collection.
+The ship’s cabinet welcomes a {trophy} treasure.
+One more triumph for the captain’s log.
+This prize marks a voyage well sailed.
+{name}, your trophy case has fresh booty.`,
+shop:`{item} aboard! A stylish haul, matey.
+The captain’s wardrobe approves this choice.
+Fine gear for our next voyage.
+You traded earned coins for extra swagger.
+The chest holds {balance} LeviBucks after that upgrade.
+A new look, fit for a treasure seeker.
+Your thinking paid for this shipshape outfit.
+{item}? That’s excellent captain fashion.
+The crew says you look adventure-ready.
+A little sparkle for the quarterdeck.
+Outfit side quest complete, matey.
+No real doubloons needed for this treasure.
+Your companion is dressed for discovery.
+A fine purchase from the harbor shop.
+We’re sailing in style now!`,
+urgency:`{seconds} seconds on the ship’s clock. Steady, matey.
+The tide is moving. Keep your thinking calm.
+A short clock calls for a clear course.
+Don’t let the countdown rock the boat.
+One fact at a time through these quick waters.
+Use a familiar route, captain.
+{seconds} seconds left. Look before you leap aboard.
+A steady hand beats a flurry of guesses.
+Keep your compass on the operation sign.
+The final tide is here. Stay focused.
+Breathe, think, then make your move.
+Quick sailing doesn’t mean careless sailing.
+Trust the routes you’ve practiced.
+Whatever the clock says, this voyage taught you things.
+The clock is low. Your courage needn’t be.`,
+idle:`Need a compass? Start with a fact you know.
+No hurry in these waters. Picture the groups.
+Try drawing little treasure piles on paper.
+A few counters can make a good treasure map.
+Your fingers are allowed aboard this thinking ship.
+Read the operation sign before choosing a course.
+A smaller fact might lead to this one.
+The crew can wait while you think.
+Imagine sharing coins into equal little chests.
+Look for zero, one, or a familiar pattern.
+Try explaining the puzzle to the ship’s parrot.
+A thoughtful pause is not a shipwreck.
+One little step can get us sailing again.
+Take a breath, captain. You have time.
+The answer needn’t arrive at full sail.`,
+streak3:`Three in a row! A tidy little treasure trail.
+Triple catch, Captain {name}!
+Three straight answers safely aboard.
+A three-fact flotilla of good thinking.
+Three golden hits. The crew is cheering!
+Our streak has caught a breeze: {streak}!`,
+streak5:`Five straight! A whole fistful of treasure.
+Five-fact combo. Raise the little victory flag!
+Captain {name} has five clean landings.
+Five answers in formation, matey!
+A five-island streak. Fine navigation.
+That’s five. The parrot demands a celebration.`,
+streak10:`TEN in a row! Ring the big ship’s bell.
+Double-digit treasure streak, captain!
+Ten clean landings. What a voyage.
+A ten-fact fleet of correct answers!
+The whole crew salutes ten straight.
+Ten in a row. We need a bigger treasure chest!`,
+streak15:`{streak} straight! This voyage belongs in pirate legend.
+A {streak}-fact fleet is sailing under your flag!
+Fifteen-plus! Every ship in the harbor is cheering.
+Captain {name}, that {streak}-answer streak is legendary.
+The treasure parade has reached {streak}!
+{streak} in a row. Even the parrot is speechless!`
+});
+
+addBank('robot',{
+greeting:`Hello, {name}. Curiosity systems are ready.
+{tutor} online. Adventure mode selected.
+Welcome back. Let’s upgrade some number skills.
+New mission available: discover something useful.
+Brainpower detected. Excellent timing.
+Your next math quest is ready to launch.
+Hello, explorer. No charging cable needed for your brain.
+Team {name} connection established.
+Today’s plan: think, test, learn, repeat.
+Welcome aboard the problem-solving station.
+A fresh set of mysteries has entered the queue.
+Learning mode is my favorite mode.
+Good to see you. Which world shall we explore?
+Mission control is ready for your ideas.
+All systems curious. Let’s begin.`,
+intro:`New puzzle loaded. Your move.
+What’s your plan for {fact}?
+Scan for a familiar pattern.
+One fact, several possible strategies.
+Operation sign first. Answer second.
+A smaller fact might be a useful tool.
+Focus window open. No rush.
+Ready to test your number skills?
+The next discovery is on screen.
+Thinking is the important part.
+Puzzle systems ready for your input.
+Try a clear plan rather than a fast guess.
+A fresh question has entered the mission.
+Use what you already know.
+Let’s investigate these numbers.
+You’re the chief problem-solver here.
+Picture the groups before calculating.
+A thoughtful pause is fully supported.
+Number challenge loaded successfully.
+Your brain has the controls.`,
+correct:`Answer confirmed. Excellent thinking, {name}.
+Two LeviBucks added. Skill upgrade detected.
+That’s a clean solution.
+Correct: {answer}. Nice work.
+Your reasoning passed the check.
+Another useful fact stored in your brain.
+Puzzle resolved. Tiny victory dance authorized.
+The numbers agree with you.
+That solution has very good engineering.
+Well solved. No reboot required.
+Your balance is now {balance} LeviBucks.
+Success! You did the thinking, not the computer.
+Pattern recognized and used correctly.
+A crisp answer to {fact}.
+Brainpower output: impressive.
+Correct. My imaginary indicator lights are celebrating.
+That’s a strong connection in your memory bank.
+Mission step completed with style.
+Your practice is becoming reliable skill.
+Nice! {answer} fits the operation exactly.
+Two pretend coins. Zero imaginary paperwork.
+Good reasoning, chief problem-solver.
+Another mystery moved to the solved column.
+That was a very human bit of cleverness.
+Confirmed! Your brain earned that win.`,
+rescue:`Correction accepted. That’s useful learning.
+Second attempt successful. One LeviBuck added.
+You used the feedback and improved the answer.
+A smart adjustment, {name}.
+The clue became a working solution.
+You changed the plan, not the goal.
+Comeback registered. {answer} is correct.
+That retry strengthened the connection.
+Good debugging. Your thinking fixed the answer.
+A revised answer with better reasoning.
+One LeviBuck earned through persistence.
+Learning update complete.
+You kept investigating. That mattered.
+Second try, clearer understanding.
+The new route worked. Nice adaptation.
+Your brain used feedback exactly as intended.
+No reset needed. Just a thoughtful correction.
+That’s a successful recovery sequence.
+Mistake turned into information. Well done.
+A useful revision and a well-earned point.`,
+wrong:`That result doesn’t match. Let’s investigate.
+Pause the process. Here’s a useful check.
+The answer needs a revision, not a restart.
+Let’s debug the operation together.
+A mismatch is information. Try this clue.
+Check the meaning of the sign first.
+That calculation took a wrong turn.
+We still have another attempt available.
+Try a different strategy for these numbers.
+Let’s inspect a smaller part of the problem.
+No match yet. Here’s the next step.
+The result needs a little more reasoning.
+A short pause can prevent a second guess.
+This is a fixable calculation, {name}.
+Use the clue as your next tool.
+Let’s replace the guess with a plan.
+A useful debugging opportunity has appeared.
+Not this answer. Examine the pattern.
+The puzzle is still open. Follow this route.
+Keep the goal. Adjust the method.`,
+wrongTwice:`Let’s save this fact for another practice cycle.
+Here’s the answer and a working strategy.
+This puzzle needs a little extra debugging.
+We’ll review the method, then test it again later.
+A practice target has been identified.
+Watch the steps before the next attempt.
+The answer is information, not a judgment.
+We’ll revisit this fact with a better tool.
+A few more encounters can strengthen this memory.
+Let’s turn this mismatch into a useful lesson.
+This calculation goes back into the learning queue.
+Here’s a reliable path through the numbers.
+Keep the strategy for the comeback round.
+A tricky fact is a training task, not a failure label.
+Let’s inspect the solution before its next visit.`,
+cardCorrect:`Answer confirmed!
+Skill upgrade!
+Solution found!
+Pattern verified!
+Mission step complete!
+Brainpower detected!
+Clean calculation!
+Result confirmed!
+Excellent reasoning!
+Memory connection made!
+Puzzle resolved!
+Two coins added!
+System high-five!
+Human cleverness wins!
+Numbers agree!
+Good work, {name}!
+Success registered!
+Neatly solved!
+Input: brilliant!
+Quest progress made!`
+});
+
+addBank('robot',{
+comeback:`Returning practice fact loaded.
+Same problem. Updated strategy.
+Let’s test the clue from the earlier attempt.
+A familiar puzzle, ready for a fresh check.
+The learning queue has brought this one back.
+This is a chance to apply your new information.
+Use the method we just reviewed.
+Comeback sequence ready.
+Your brain has seen this pattern before.
+Retest time, chief problem-solver.
+A fresh attempt at a known challenge.
+Let’s strengthen this memory connection.
+The tricky fact is back for useful practice.
+Updated thinking can produce a better result.
+Same numbers, a better toolkit.`,
+near:`Only {remaining} initial facts remain in the queue.
+Mission checkpoint is close.
+Just {remaining} fresh puzzles before the review.
+You’re approaching the end of this level.
+The final first-round challenges are loading.
+Almost through the initial fact set.
+Keep the reasoning clear through the last steps.
+Your progress bar is nearly full.
+Final stretch, chief problem-solver.
+{name}, your last {remaining} new facts await.
+A few more careful calculations.
+The results screen is getting ready.
+Stay focused on the next small task.
+Nearly at the checkpoint. No need for a rush.
+The end of the first-round queue is in sight.`,
+pass:`Level mastery confirmed. Well earned, {name}.
+Mission completed with real understanding.
+Your skills have unlocked the next challenge.
+{level} is now in the mastered column.
+Achievement registered. Celebrating is recommended.
+That’s a successful learning mission.
+Your practice produced a strong result.
+Checkpoint reached. You did the work.
+A whole level completed by your brainpower.
+Skill upgrade complete, chief problem-solver.
+The next door opens to your reasoning.
+Mastery detected. Pride is an appropriate response.
+A reliable set of facts is growing in your memory.
+Good thinking met the goal.
+Level complete. Imaginary celebration lights activated.`,
+fail:`More practice recommended. Progress still recorded.
+You earned {wins} first-try wins. The target is ten.
+This result shows useful training targets.
+A retry will test your updated strategies.
+Not mastered yet. The system supports another attempt.
+Your learning has not been deleted.
+Let’s focus on the facts that need reinforcement.
+This was a practice cycle, not a judgment.
+Keep the information from this round.
+A fresh set of facts can help the patterns settle.
+The next attempt starts with more experience.
+A short break is compatible with good learning.
+We have useful feedback for the next run.
+Try again when you’re ready, {name}.
+The goal remains available. So do your LeviBucks.`,
+trophy:`New {trophy} trophy registered.
+Achievement artifact added to your collection.
+This award records real effort and skill.
+The trophy case has received an upgrade.
+A {trophy} prize for mastering {level}.
+Your work has produced something worth celebrating.
+Collection update: one shiny success.
+New trophy confirmed, {name}.
+That award is a record of your persistence.
+The achievement shelf needs another space.
+A well-earned trophy has entered the inventory.
+This prize belongs to the chief problem-solver.
+A visible reminder of invisible brainwork.
+Mastery receipt printed. In trophy form.
+Another success saved in your collection.`,
+shop:`{item} added to the cosmetic inventory.
+Appearance upgrade complete. Looking good.
+Your LeviBucks powered this new look.
+Style setting updated successfully.
+{balance} LeviBucks remain in your balance.
+A useful reward for your practice.
+{item} is ready for the next mission.
+Your companion’s look has been upgraded.
+Pretend-money purchase confirmed.
+A new look, with the same friendly brain support.
+Equipment acquired. Confidence looks good on you.
+Cosmetic mission complete.
+Your learning earnings became a fun accessory.
+Inventory updated. No real payment involved.
+That was a very stylish configuration choice.`,
+urgency:`Time check: {seconds} seconds. Keep the reasoning clear.
+The countdown is low. Use a known strategy.
+One accurate answer is better than several guesses.
+Short clock, steady thinking.
+Focus on the current operation.
+{seconds} seconds remain in this mission.
+A calm approach is still the best tool.
+Try the simplest reliable method.
+The timer is moving. Your brain needn’t panic.
+Final phase. Read the numbers carefully.
+Use the patterns already stored in memory.
+Accuracy first. Quick guesses aren’t a shortcut.
+Take a small breath, then make your next move.
+Whatever the result, practice data is useful.
+Stay with one fact at a time, {name}.`,
+idle:`Try breaking the problem into smaller parts.
+A picture can be a useful thinking tool.
+No timer in this level. You have room to reason.
+Read the operation sign in words.
+Could a known fact help with this one?
+Fingers and counters are supported learning tools.
+A thoughtful pause is normal.
+Start with the easiest part you recognize.
+What would these numbers look like in groups?
+You can reason out loud without using the microphone.
+Look for zero, one, or a familiar pattern.
+Try explaining the problem to an imaginary robot.
+I’m here while you think, {name}.
+A clear first step is enough to begin.
+Your brain is allowed to take its time.`,
+streak3:`Three correct in sequence. A promising pattern.
+Triple success registered.
+Three-fact chain established.
+Your focus has connected three wins.
+A three-answer combo, nicely built.
+Streak counter: {streak}. Good momentum.`,
+streak5:`Five in a row. Consistency upgrade!
+Five-fact chain confirmed, {name}.
+A full handful of accurate answers.
+Five straight. Focus systems are looking strong.
+Five successes linked. That’s real concentration.
+A five-answer combo deserves a system high-five.`,
+streak10:`Ten straight! Double-digit achievement detected.
+Ten-fact chain established. Excellent focus.
+Double system high-five for ten in a row!
+A ten-answer sequence of solid reasoning.
+Ten correct. My imaginary lights are flashing.
+That’s a whole ten-pack of reliable thinking.`,
+streak15:`{streak} straight. Legendary concentration registered.
+A {streak}-fact chain! Celebration lights at maximum.
+Fifteen-plus. Your focus deserves its own mission badge.
+{name}, that {streak}-answer sequence is extraordinary.
+Streak counter {streak}. Imaginary applause processor overloaded.
+A {streak}-fact run! Human brainpower remains very impressive.`
+});
+
+addBank('coach',{cardRescue:`Comeback complete!
+That’s persistence!
+Great adjustment!
+You used the clue!
+Second swing, solid hit!
+A smart rethink!
+Back in the game!
+You stayed with it!
+Clue power!
+Try two triumph!
+Nice recovery!
+Learning in action!
+You found the path!
+Bounce-back win!
+That’s real progress!`});
+addBank('wizard',{cardRescue:`The clue worked!
+A wiser second spell!
+Mystery untangled!
+Patient magic!
+A brighter connection!
+The new path opens!
+Spell adjusted!
+Understanding grows!
+A thoughtful correction!
+You followed the lantern!
+Second-visit success!
+A new discovery!
+The pattern clicked!
+Wisdom gained!
+A patient little victory!`});
+addBank('pirate',{cardRescue:`Back on course!
+Treasure rescued!
+Second voyage success!
+A smart course correction!
+Your compass worked!
+Clue aboard!
+Comeback ahoy!
+A wiser captain!
+You found the route!
+Steady sailing wins!
+Shipshape correction!
+New map, good landing!
+The crew salutes you!
+Second catch success!
+You navigated the snag!`});
+addBank('robot',{cardRescue:`Correction accepted!
+Good debugging!
+Learning update!
+Recovery complete!
+Strategy improved!
+Second test passed!
+Useful revision!
+Feedback applied!
+Connection stronger!
+New method worked!
+Smart adjustment!
+Retest successful!
+Persistence registered!
+Better reasoning!
+Problem resolved!`});
+
+// Device voices only: quality depends on the installed browser/OS voices.
+let availableVoices=[],speechGeneration=0,speechPause=null,activeUtterance=null,activeSpeechTask=null;
+function voiceScore(v){if(!/^en(?:[-_]|$)/i.test(v.lang||''))return -10000;const n=v.name||'';let s=0;if(/natural|neural/i.test(n))s+=140;if(/online/i.test(n))s+=35;if(/google us english/i.test(n))s+=115;else if(/google.*english/i.test(n))s+=90;if(/\b(samantha|ava|allison|aria|jenny|guy|daniel)\b/i.test(n))s+=75;if(/enhanced|premium/i.test(n))s+=40;if(/^en[-_]US$/i.test(v.lang))s+=12;if(v.default)s+=4;if(v.localService)s+=3;if(/espeak|compact|novelty|whisper|trinoids|zarvox|bubbles|boing|bad news|good news|bells|cellos|hysterical|organ|wobble/i.test(n))s-=350;return s;}
+function chosenVoice(localOnly=false){const voices=availableVoices.filter(v=>voiceScore(v)>-10000&&(!localOnly||v.localService));const pref=save.speech.voiceURI;return(!localOnly&&pref!=='auto'&&voices.find(v=>v.voiceURI===pref))||voices[0]||null;}
+function refreshVoices(){if(!window.speechSynthesis)return;try{availableVoices=[...speechSynthesis.getVoices()].filter(v=>/^en(?:[-_]|$)/i.test(v.lang||'')).sort((a,b)=>voiceScore(b)-voiceScore(a)||(a.name||'').localeCompare(b.name||''));}catch(e){availableVoices=[];}updateVoicePicker();}
+function finishSpeech(task,status){if(task?.status!=='pending')return;task.status=status;task.resolve(status);}
+function quietSpeech(status='silent'){return{status,started:false,done:Promise.resolve(status)};}
+function cancelSpeech(){speechGeneration++;clearTimeout(speechPause);finishSpeech(activeSpeechTask,'cancelled');activeSpeechTask=null;if(activeUtterance){activeUtterance.onstart=null;activeUtterance.onend=null;activeUtterance.onerror=null;}activeUtterance=null;try{window.speechSynthesis?.cancel();}catch(e){}}
+function speechText(text){return String(text).replace(/[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F\u200D]/gu,'').replace(/×/g,' times ').replace(/÷/g,' divided by ').replace(/−/g,' minus ').replace(/=/g,' equals ').replace(/\+/g,' plus ').replace(/\bL\b/g,'LeviBucks').replace(/[✦✧ϟ↗✓◇◎♫]/g,'').replace(/\s+/g,' ').trim();}
+function speechSentences(text){const clean=speechText(text);return(clean.match(/[^.!?]+(?:[.!?]+|$)/g)||[]).map(s=>s.trim()).filter(Boolean);}
+function voiceParams(){const p=personalities[save.tutor.personality];return{rate:save.speech.rate??p.rate,pitch:save.speech.pitch??p.pitch};}
+function speak(text,{force=false}={}){cancelSpeech();if((!save.voice&&!force)||!window.speechSynthesis||typeof window.SpeechSynthesisUtterance!=='function')return quietSpeech();const task={started:false,status:'pending',done:null,resolve:null};task.done=new Promise(resolve=>task.resolve=resolve);activeSpeechTask=task;const generation=speechGeneration,sentences=speechSentences(text);let index=0,localFallback=false;const next=()=>{if(generation!==speechGeneration)return;if(index>=sentences.length){finishSpeech(task,'ended');return;}const u=new SpeechSynthesisUtterance(sentences[index]),settings=voiceParams(),voice=chosenVoice(localFallback);activeUtterance=u;if(voice)u.voice=voice;u.lang=voice?.lang||'en-US';u.volume=.9;u.rate=Math.max(.8,Math.min(1.22,settings.rate+(Math.random()-.5)*.024));u.pitch=Math.max(.85,Math.min(1.15,settings.pitch+(Math.random()-.5)*.018));u.onstart=()=>{if(generation===speechGeneration)task.started=true;};u.onend=()=>{if(generation!==speechGeneration)return;activeUtterance=null;index++;if(index>=sentences.length)finishSpeech(task,'ended');else speechPause=setTimeout(next,/[!?]$/.test(u.text)?210:155);};u.onerror=e=>{if(generation!==speechGeneration)return;activeUtterance=null;if(e.error==='canceled'||e.error==='interrupted'){finishSpeech(task,'cancelled');return;}if(!localFallback&&voice&&!voice.localService&&chosenVoice(true)){localFallback=true;speechPause=setTimeout(next,100);}else{finishSpeech(task,'failed');if(force)toast('That voice could not play. Try Auto or another installed voice.');}};try{speechSynthesis.speak(u);}catch(e){activeUtterance=null;finishSpeech(task,'failed');}};next();return task;}
+function initializeVoices(){if(!window.speechSynthesis)return;refreshVoices();if(speechSynthesis.addEventListener)speechSynthesis.addEventListener('voiceschanged',refreshVoices);else speechSynthesis.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,250);setTimeout(refreshVoices,1200);}
+function voiceOptions(){const selected=save.speech.voiceURI,auto=availableVoices[0];return`<option value="auto">Auto · ${esc(auto?.name||'best available English voice')}</option>${availableVoices.map(v=>`<option value="${esc(v.voiceURI)}">${esc(v.name)} · ${esc(v.lang)}${v.localService?' · on device':' · may need internet'}</option>`).join('')}${selected!=='auto'&&!availableVoices.some(v=>v.voiceURI===selected)?`<option value="${esc(selected)}">Saved voice unavailable · using Auto</option>`:''}`;}
+function updateVoicePicker(){const picker=$('#voicePicker');if(picker){picker.innerHTML=voiceOptions();picker.value=save.speech.voiceURI;picker.disabled=!window.speechSynthesis;const v=chosenVoice();$('#voiceStatus').textContent=availableVoices.length?`Selected: ${v?.name||'browser default'}. ${v?.localService?'Available on this device.':'This voice may require internet.'}`:'Waiting for installed English voices. If none appear, the browser uses its default voice.';}}
+function voiceEditor(){const p=voiceParams();return`<section class="editor-card" id="voiceEditor"><div class="field-label">05 / A voice with personality</div><h3>Less robot. More sidekick.</h3><p class="small muted" style="margin:10px 0 18px">Try Edge’s “Natural” voices or Chrome’s Google voices for the most lifelike sound, when available. On Apple devices, try Samantha, Ava, or an enhanced English voice. Some voices need internet; others work offline.</p><label class="field-label" for="voicePicker">Tutor voice</label><select class="text-field" id="voicePicker" ${!window.speechSynthesis?'disabled':''}>${voiceOptions()}</select><p class="small muted" id="voiceStatus" style="margin-top:8px" aria-live="polite"></p><div class="voice-slider"><label for="voiceRate">Speaking speed <strong id="rateValue">${p.rate.toFixed(2)}×</strong></label><input id="voiceRate" type="range" min="0.8" max="1.2" step="0.01" value="${p.rate}"></div><div class="voice-slider"><label for="voicePitch">Voice pitch <strong id="pitchValue">${p.pitch.toFixed(2)}</strong></label><input id="voicePitch" type="range" min="0.85" max="1.15" step="0.01" value="${p.pitch}"></div><div class="row wrap" style="margin-top:18px"><button class="btn" id="previewVoice" ${!window.speechSynthesis?'disabled':''}>♫ Preview voice</button><button class="btn soft" id="resetVoice">Personality defaults</button></div><p class="small muted" style="margin-top:13px">Preview works even with Voice off. Your choices save automatically. Gentle pitch changes sound more natural; some voices ignore pitch.</p></section>`;}
+function bindVoiceEditor(){if(!$('#voicePicker'))return;updateVoicePicker();$('#voicePicker').onchange=e=>{save.speech.voiceURI=e.target.value;persist();cancelSpeech();updateVoicePicker();};for(const [id,key,display]of[['voiceRate','rate','rateValue'],['voicePitch','pitch','pitchValue']])$('#'+id).oninput=e=>{save.speech[key]=Number(e.target.value);$('#'+display).textContent=Number(e.target.value).toFixed(2)+(key==='rate'?'×':'');persist();cancelSpeech();};$('#previewVoice').onclick=()=>{refreshVoices();speak(`Hi, ${save.name||'Levi'}! I’m ${save.tutor.name}. Let’s turn a tricky question into a little victory. Seven × eight = fifty-six.`,{force:true});};$('#resetVoice').onclick=()=>{save.speech.rate=null;save.speech.pitch=null;persist();const p=voiceParams();$('#voiceRate').value=p.rate;$('#voicePitch').value=p.pitch;$('#rateValue').textContent=p.rate.toFixed(2)+'×';$('#pitchValue').textContent=p.pitch.toFixed(2);cancelSpeech();toast('Gentle personality defaults restored.');};}
+
+const tipBags=new Map();
+function pickTip(key,options){key+=':'+options.length;let bag=tipBags.get(key)||{left:[],last:-1};if(!bag.left.length){bag.left=shuffled(options.map((_,i)=>i));if(bag.left.length>1&&bag.left.at(-1)===bag.last)[bag.left[0],bag.left[bag.left.length-1]]=[bag.left[bag.left.length-1],bag.left[0]];}bag.last=bag.left.pop();tipBags.set(key,bag);return options[bag.last];}
+function factStrategy(f,id,reveal){const{a,b,answer}=f;let key=id,tips=[];
+if(id==='add'){
+ if(!a||!b){key+='zero';tips=['Adding zero leaves the other number unchanged.','Zero adds nothing. Keep the number you started with.','Picture an empty pile joining the other pile. Nothing new is added.'];}
+ else{key+='regular';const big=Math.max(a,b),small=Math.min(a,b);tips=[`Start at ${big} and count forward ${small} steps.`,`Picture a pile of ${a} and a pile of ${b}. Count them together.`,`Addition can swap places: try ${b} + ${a}.`];if(a===b)tips.push(`This is a double: two equal groups of ${a}.`);else if(big<10&&a+b>=10){const step=10-big;tips.push(`Make ten: split ${small} into ${step} and ${small-step}. Add ${step} to ${big}, then add the rest.`);}else tips.push(`Use ${big} + 1 as your first step, then keep going until you’ve added ${small}.`);}
+}
+if(id==='sub'){
+ if(!b){key+='zero';tips=['Taking away zero means nothing changes.','Remove nothing from the starting pile. How much stays?','Subtracting zero keeps your original number.'];}
+ else if(a===b){key+='same';tips=['Taking away everything leaves nothing.','The two numbers match. Remove the whole pile.','If all the counters leave, none remain.'];}
+ else{key+='regular';const chunk=Math.min(b,5);tips=[`Count up from ${b} to ${a}. The number of steps is the difference.`,`Think backwards: ${b} + what number makes ${a}?`,`Start at ${a} and count back ${b} steps.`,`Break the takeaway into ${chunk} and ${b-chunk}. First do ${a} − ${chunk}, then take away the rest.`];}
+}
+if(id==='mul'){
+ const n=b===0||b===1||b===2||b===5||b===9||b===10||b===11||b===12?a:b;
+ if(!a||!b){key+='zero';tips=['Zero groups, or groups of zero, always make zero.','An empty group contributes nothing, however many times you count it.','Picture no groups at all. There are no objects to count.'];}
+ else if(a===1||b===1){key+='one';tips=['One group is just the other number.','Multiplying by one keeps the number unchanged.','Think of a single pile containing the other number of counters.'];}
+ else if(a===2||b===2){key+='two';const x=a===2?b:a;tips=[`Double ${x}: add it to itself.`,`Two equal groups of ${x} means ${x} + ${x}.`,`Count ${x} once, then count one more group of ${x}.`];}
+ else if(a===9||b===9){key+='nine';const x=a===9?b:a;tips=[`Nines trick: ${x} × 10, then subtract one ${x}.`,`Nine groups of ${x} is one group fewer than ten groups.`,`Use ${x} × 9 = (${x} × 5) + (${x} × 4).`];}
+ else if(a===10||b===10){key+='ten';const x=a===10?b:a;tips=[`Ten groups of ${x}: put a zero after that whole number.`,`Count by tens, ${x} times.`,`Multiplying ${x} by ten shifts its digits one place to the left.`];}
+ else if(a===5||b===5){key+='five';const x=a===5?b:a;tips=[`Five groups of ${x} is half of ten groups of ${x}.`,`Count by fives, ${x} times.`,`Use ${x} × 5 = (${x} × 4) + ${x}.`];}
+ else if(a===11||b===11){key+='eleven';const x=a===11?b:a;tips=[`Eleven groups of ${x} means ten groups plus one more ${x}.`,`Split eleven into ten and one: ${x} × 10, then add ${x}.`,`Use ${x} × 11 = (${x} × 6) + (${x} × 5).`];}
+ else if(a===12||b===12){key+='twelve';const x=a===12?b:a;tips=[`Twelve groups of ${x}: ten groups plus two groups.`,`Split twelve into ten and two, then combine the two products.`,`Try ${x} × 6, then double that amount.`];}
+ else{key+='regular';tips=[`Think ${a-1} × ${b} = ${(a-1)*b}, then add one more ${b}.`,`Picture ${a} equal rows of ${b} counters. Count the whole array.`,`Count by ${b}, a total of ${a} times.`];}
+}
+if(id==='div'){
+ if(!a){key+='zero';tips=[`Sharing zero among ${b} groups leaves zero in each group.`,`An empty treasure chest shared ${b} ways still gives everyone nothing.`,`Ask what number times ${b} makes zero.`];}
+ else if(b===1){key+='one';tips=['One group gets the whole amount.','Dividing into just one group leaves the amount unchanged.','If there’s one sharing group, nothing needs to split.'];}
+ else{key+='regular';tips=[`Use the opposite operation: ${b} × what number makes ${a}?`,`Share ${a} counters equally among ${b} groups. How many are in each?`,`Count by ${b} until you reach ${a}. How many steps did that take?`];if(b===2)tips.push(`Dividing by two means finding half of ${a}.`);}
+}
+return pickTip(key,tips)+(reveal?` ${f.key} = ${answer}.`:'');}
+function factSpark(f,id){if(id==='mul'&&(f.a===9||f.b===9)&&f.answer>0)return'Fun nines fact: add the digits repeatedly and you end up at nine!';if(id==='mul'&&f.a&&f.b)return`Flip fact: ${f.b} × ${f.a} is also ${f.answer}.`;if(id==='div')return`Check it with multiplication: ${f.b} × ${f.answer} = ${f.a}.`;if(id==='sub')return`Reverse check: ${f.answer} + ${f.b} = ${f.a}.`;if(id==='add')return`Swap the numbers: ${f.b} + ${f.a} is still ${f.answer}.`;return'Zero groups always make zero. A handy pattern to keep!';}
+
+// This timer belongs to one resolved fact and its own speech response only.
+// It never waits for later chatter, and stale callbacks cannot advance a new fact.
+let autoAdvance=null;
+function speedElapsed(g,now=performance.now()){const waiting=g.autoPauseStarted==null?0:Math.max(0,now-g.autoPauseStarted);return Math.max(0,(now-g.started-(g.autoPauseMs||0)-waiting)/1000);}
+function cancelAutoAdvance(){const pending=autoAdvance;autoAdvance=null;if(pending){clearTimeout(pending.delayTimer);clearTimeout(pending.capTimer);clearTimeout(pending.startTimer);const g=pending.session;if(g.autoPauseStarted!=null){g.autoPauseMs=(g.autoPauseMs||0)+Math.max(0,performance.now()-g.autoPauseStarted);g.autoPauseStarted=null;}}const button=$('#nextQuestion');if(button){button.classList.remove('auto-waiting','auto-countdown');button.style.removeProperty('--auto-ms');button.removeAttribute('aria-label');button.removeAttribute('title');}}
+function armAutoAdvance(response,feedbackAt){cancelAutoAdvance();const g=game;if(!g||g.finished||!g.locked||screen!=='play')return;const pending={session:g,fact:g.current,feedbackAt,delayTimer:null,capTimer:null,startTimer:null,dueAt:null};autoAdvance=pending;const valid=()=>autoAdvance===pending&&game===g&&g.current===pending.fact&&g.locked&&!g.finished&&screen==='play';const advance=()=>{if(!valid())return;if($('#modalRoot').innerHTML){cancelAutoAdvance();return;}nextQuestion();};const schedule=deadline=>{if(!valid())return;clearTimeout(pending.delayTimer);pending.dueAt=Math.min(deadline,feedbackAt+(g.speed?800:8000));const ms=Math.max(0,pending.dueAt-performance.now()),button=$('#nextQuestion');button.classList.remove('auto-waiting','auto-countdown');button.style.setProperty('--auto-ms',ms+'ms');void button.offsetWidth;button.classList.add('auto-countdown');button.setAttribute('aria-label',(g.queue.length?'Next fact':'See my results')+', continuing automatically. Tap or press Enter to skip the wait.');button.title='Continuing automatically · tap or press Enter now';pending.delayTimer=setTimeout(advance,ms);};
+if(g.speed){if(!g.completedAt)g.autoPauseStarted=feedbackAt;schedule(feedbackAt+800);return;}
+pending.capTimer=setTimeout(advance,Math.max(0,feedbackAt+8000-performance.now()));
+if(!response||!save.voice||response.status==='silent'||response.status==='failed'||response.status==='cancelled'){schedule(feedbackAt+2000);return;}
+const button=$('#nextQuestion');button.classList.add('auto-waiting');button.setAttribute('aria-label','Next fact, waiting for the tutor, then continuing automatically. Tap or press Enter to skip.');button.title='Waiting for this response · tap or press Enter to skip';
+// Browsers which never start speaking fall back to two seconds from feedback.
+pending.startTimer=setTimeout(()=>{if(valid()&&!response.started&&!window.speechSynthesis?.speaking&&response.status==='pending')advance();},Math.max(0,feedbackAt+2000-performance.now()));
+response.done.then(status=>{if(!valid())return;clearTimeout(pending.startTimer);schedule(status==='ended'?performance.now()+2000:feedbackAt+2000);});
+}
+
+// Level engine: first attempts determine mastery; comeback rounds never inflate it.
+function allFacts(id,i){const g=modules[id].groups[i],out=[];for(let a=0;a<=12;a++)for(let b=0;b<=12;b++){let keep=false;if(id==='add')keep=Array.isArray(g)?g.includes(b):g==='doubles'?(a===b||a+b===10):true;if(id==='sub')keep=a>=b&&(Array.isArray(g)?g.includes(b):g==='near'?a-b<=2:true);if(id==='mul')keep=Array.isArray(g)?g.includes(b):true;if(id==='div')keep=b>=1&&(Array.isArray(g)?g.includes(b):true);if(keep){const x=id==='div'?a*b:a,answer=id==='add'?a+b:id==='sub'?a-b:id==='mul'?a*b:a;out.push({a:x,b,answer,key:`${x} ${modules[id].symbol} ${b}`});}}return out;}
+function leavePlay(){cancelAutoAdvance();clearInterval(timerHandle);stopIdle();stopListening();cancelSpeech();game=null;}
+function navigate(where,id){cancelAutoAdvance();if(game&&!game.finished){confirmModal('Leave this level?','Your LeviBucks and practice stats are saved, but this level will restart next time.',()=>{leavePlay();show(where,id);},'Leave level');return;}leavePlay();show(where,id);}
+function show(where,id){cancelAutoAdvance();screen=where;if(where!=='play')stopIdle();document.body.classList.toggle('playing',where==='play');if(id)selectedModule=id;document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===where||where==='levels'&&b.dataset.nav==='home'));const renderers={home:renderHome,levels:renderLevels,play:renderPlay,finish:renderFinish,trophies:renderTrophies,editor:renderEditor,shop:renderShop};$('#main').innerHTML=renderers[where]();bindScreen();if(where!=='play')window.scrollTo(0,0);}
+function startLevel(i){const id=selectedModule;if(i>save.modules[id].unlocked)return;leavePlay();$('#confetti').innerHTML='';$('#toast').classList.add('hidden');const pool=shuffled(allFacts(id,i)),facts=Array.from({length:12},(_,n)=>({...pool[n%pool.length],original:true}));game={id,level:i,queue:facts,current:null,originalsDone:0,firstCorrect:0,streak:save.questStreak||0,maxStreak:0,questionSerial:0,urgencyFlags:[],attempt:0,earned:0,startBalance:save.balance,started:performance.now(),autoPauseMs:0,autoPauseStarted:null,answerSeconds:0,resolved:0,finished:false,locked:false,speed:i>=8,limit:i===8?120:90};show('play');window.scrollTo(0,0);nextQuestion();say(line('intro')+' '+(i>=8?`Speed quest: ${game.limit} seconds. Accuracy first!`:'Twelve facts, no timer. Let’s explore!'));if(game.speed){timerHandle=setInterval(updateTimer,200);updateTimer();}}
+function nextQuestion(){if(!game||game.finished)return;cancelAutoAdvance();stopListening();if(!game.queue.length){finishLevel(false);return;}game.current=game.queue.shift();game.attempt=0;game.locked=false;game.factStarted=performance.now();game.questionSerial++;if(game.originalsDone>0){const category=!game.current.original?'comeback':game.originalsDone===10&&!game.nearAnnounced?'near':'intro';if(category==='near')game.nearAnnounced=true;chatter(category,{},'',!game.speed&&(category!=='intro'||game.questionSerial%4===0));}$('#question').textContent=game.current.key+' = ?';$('#questionLabel').textContent=game.current.original?'YOUR NEXT LITTLE VICTORY':'PRACTICE COMEBACK · YOU’VE GOT THIS';$('#feedback').textContent=cardPrompt();$('#feedback').className='feedback';$('#answer').value='';$('#answer').disabled=false;$('#checkAnswer').disabled=false;$('#nextQuestion').classList.add('hidden');$('.answer-row').classList.remove('has-next');document.querySelectorAll('[data-key]').forEach(b=>b.disabled=false);updatePlayProgress();if(matchMedia('(min-width:900px)').matches)$('#answer').focus();updateMicUI();scheduleIdle();}
+function updatePlayProgress(){if(!game||screen!=='play')return;$('#progressFill').style.width=game.originalsDone/12*100+'%';$('#progressText').textContent=game.originalsDone+' / 12 facts explored'+(!game.current?.original?' · comeback round':'');$('#accuracyText').textContent=game.firstCorrect+' / 10 first-try wins';$('#streak').textContent='✦ '+game.streak+' streak';}
+function strategy(f,id,reveal){return factStrategy(f,id,reveal);}
+function submitAnswer(){if(!game||game.finished||game.locked)return;if(game.speed&&speedElapsed(game)>=game.limit){finishLevel(true);return;}const el=$('#answer'),raw=el.value.trim();if(!/^\d{1,3}$/.test(raw)){toast('Pop a whole number in the answer box first.');return;}stopIdle();stopListening();const val=Number(raw),f=game.current,first=game.attempt===0;
+if(val===f.answer){const feedbackAt=performance.now();const gain=first?2:1;money(gain);game.earned+=gain;game.streak++;save.questStreak=game.streak;game.maxStreak=Math.max(game.maxStreak,game.streak);if(first&&f.original)game.firstCorrect++;$('#feedback').textContent=line(first?'cardCorrect':'cardRescue')+(first?' +2 LeviBucks':' +1 LeviBuck');$('#feedback').className='feedback';const streakCategory=game.streak>=15&&game.streak%5===0?'streak15':game.streak===10?'streak10':game.streak===5?'streak5':game.streak===3?'streak3':null;let praise=line(streakCategory||(first?'correct':'rescue'));if(first&&!streakCategory&&Math.random()<.18)praise+=' '+factSpark(f,game.id);const responseSpeech=say(praise,'success',!!streakCategory||!first||Math.random()<(game.speed ? .35 : .75));sound('correct');resolveFact(first);armAutoAdvance(responseSpeech,feedbackAt);}
+else{money(-1);game.earned--;game.streak=0;save.questStreak=0;persist();sound('wrong');$('#feedback').className='feedback bad';if(first){game.attempt=1;$('#feedback').textContent=line('wrong')+' −1 LeviBuck · second chance!';say(line('wrong')+` ${val} isn’t the answer to ${f.key}. ${strategy(f,game.id,false)}`,'error');el.value='';if(matchMedia('(min-width:900px)').matches)el.focus();scheduleIdle();}else{$('#feedback').textContent=`The answer is ${f.answer}. We’ll practice this one again.`;say(line('wrongTwice')+' '+strategy(f,game.id,true),'error');game.queue.push({...f,original:false});resolveFact(false);}}updatePlayProgress();}
+function resolveFact(firstRight){stopIdle();const g=game,f=g.current;g.locked=true;const secs=(performance.now()-g.factStarted)/1000;if(f.original){g.originalsDone++;g.resolved++;g.answerSeconds+=secs;const st=save.modules[g.id].stats;st.seen++;st.firstCorrect+=firstRight?1:0;st.seconds+=secs;const fs=st.facts[f.key]||{seen:0,correct:0,seconds:0,answer:f.answer};fs.seen++;fs.correct+=firstRight?1:0;fs.seconds+=secs;st.facts[f.key]=fs;}
+const p=save.modules[g.id];if(g.maxStreak>=5&&!p.badges.includes('streak5')){p.badges.push('streak5');toast('Badge earned: High-five streak!');}if(g.maxStreak>=10&&!p.badges.includes('streak10')){p.badges.push('streak10');toast('Badge earned: Tenacious ten!');}if(!g.queue.length&&g.originalsDone===12){g.completedAt=performance.now();clearInterval(timerHandle);if($('#timer'))$('#timer').textContent='Finished!';}persist();$('#answer').disabled=true;$('#checkAnswer').disabled=true;document.querySelectorAll('[data-key]').forEach(b=>b.disabled=true);$('#nextQuestion').classList.remove('hidden');$('#nextLabel').textContent=g.queue.length?'Next fact →':'See results ✦';$('.answer-row').classList.add('has-next');updateMicUI();$('#nextQuestion').focus();}
+function updateTimer(){if(!game||game.finished||game.completedAt)return;const left=Math.max(0,game.limit-speedElapsed(game)),el=$('#timer');if(el){el.textContent=Math.ceil(left)+'s left';el.classList.toggle('urgent',left<=20);}if(left<=0){finishLevel(true);return;}for(const threshold of[8,20])if(left<=threshold&&!game.urgencyFlags.includes(threshold)&&!game.locked&&game.attempt===0&&!listening){game.urgencyFlags.push(...[20,8].filter(t=>t>=threshold));chatter('urgency',{seconds:Math.ceil(left)});break;}}
+function finishLevel(timedOut){if(!game||game.finished)return;cancelAutoAdvance();clearInterval(timerHandle);stopIdle();stopListening();game.finished=true;const g=game,p=save.modules[g.id],accuracy=Math.round(g.firstCorrect/12*100),passed=!timedOut&&g.originalsDone===12&&g.queue.length===0&&g.firstCorrect>=10,elapsed=g.speed?speedElapsed(g,g.completedAt||performance.now()):((g.completedAt||performance.now())-g.started)/1000,avg=g.resolved?g.answerSeconds/g.resolved:0,newTrophy=passed&&!p.completed.includes(g.level),previous=p.results[g.level];let speedRecord=false;
+if(passed){if(newTrophy){p.completed.push(g.level);p.completed.sort((a,b)=>a-b);p.unlocked=Math.min(9,Math.max(p.unlocked,g.level+1));}if(g.firstCorrect===12&&!p.badges.includes('perfect'))p.badges.push('perfect');if(g.speed&&(!previous?.speedBest||elapsed<previous.speedBest)){speedRecord=true;if(!p.badges.includes('speed'))p.badges.push('speed');}p.results[g.level]={accuracy:Math.max(previous?.accuracy||0,accuracy),avg:previous?Math.min(previous.avg,avg):avg,speedBest:g.speed?Math.min(previous?.speedBest||Infinity,elapsed):null};}
+lastResult={id:g.id,level:g.level,passed,timedOut,newTrophy,speedRecord,accuracy,avg,firstCorrect:g.firstCorrect,earned:save.balance-g.startBalance,elapsed,done:g.originalsDone};persist();show('finish');if(passed){celebrate();sound('win');say(line('pass')+(newTrophy?' '+line('trophy',{trophy:tier(g.level)}):''),'success');}else say((timedOut?'Time’s up for this round. ':'')+line('fail'));}
+function celebrate(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;$('#confetti').innerHTML=Array.from({length:65},(_,i)=>`<i style="left:${Math.random()*100}%;background:${['#d8f578','#b8a2e8','#ffad70','#86d7d4'][i%4]};animation-delay:${Math.random()*.8}s;--drift:${Math.random()*260-130}px;transform:rotate(${Math.random()*360}deg)"></i>`).join('');setTimeout(()=>$('#confetti').innerHTML='',3900);}
+
+function renderHome(){return`<div class="welcome-line row between"><span class="eyebrow muted">The adventure / Base camp</span><span class="pill">✦ ${totalMastered()} / 40 levels mastered</span></div><section class="hero"><div class="hero-copy"><div class="eyebrow">Small steps. Super powers.</div><h1>Hey ${esc(save.name||'Levi')},<br>let’s level up.</h1><p>Four worlds to explore. A pocket full of possibility. Your next math adventure starts here.</p></div>${heroArt()}</section><div class="section-head row between"><h2>Choose your world</h2><span class="small muted">Go at your own pace</span></div><div class="module-grid">${moduleIds.map(id=>{const m=modules[id],n=mastery(id);return`<article class="module-card" style="--tint:${m.color}"><div class="symbol">${m.symbol}</div><span class="pill">${n===10?'All mastered!':n+' / 10 levels'}</span><h3>${m.name}</h3><p>${m.desc}</p><div class="mini-progress"><i style="width:${n*10}%"></i></div><div class="small muted">${rank(id)}</div><button class="btn" data-world="${id}">${n?'Continue quest':'Start exploring'}<span>↗</span></button></article>`;}).join('')}</div><p class="bottom-note">✦ No rush, no pressure. The first 8 levels in every world are untimed.<br>Earn LeviBucks, unlock tutor gear, and turn practice into a superpower.</p>`;}
+function groupDescription(id,i){const g=modules[id].groups[i];if(i>=8)return`${i===8?120:90}-second challenge · mixed facts`;if(g==='doubles')return'Doubles & make-ten combinations';if(g==='near')return'Same-number & neighbor differences';if(g==='mixed')return'All facts from 0–12';if(id==='sub')return'Take away '+g.join(', ')+' · no negative answers';if(id==='div')return'Divide by '+g.join(', ')+' · whole-number answers';return(id==='mul'?'Tables ':'Add ')+g.join(', ');}
+function moduleStats(id){const s=save.modules[id].stats;return`<div class="stats-row"><div class="stat"><strong>${s.seen?Math.round(s.firstCorrect/s.seen*100)+'%':'—'}</strong><span>FIRST-TRY ACCURACY</span></div><div class="stat"><strong>${s.seen?(s.seconds/s.seen).toFixed(1)+'s':'—'}</strong><span>AVERAGE / FACT</span></div><div class="stat"><strong>${s.seen}</strong><span>FACTS PRACTICED</span></div></div>`;}
+function renderLevels(){const id=selectedModule,m=modules[id],p=save.modules[id];return`<button class="back" data-back="home">← All worlds</button><div class="page-heading"><span class="eyebrow muted">${m.world}</span><h1>${m.name} quest</h1><p>Every level is a new adventure. Your rank: <strong>${rank(id)}</strong>.</p></div>${moduleStats(id)}<div class="rule"><strong>The quest code:</strong> 12 facts. Get at least 10 right on the first try to unlock the next level. Mistakes are practice, not a dead end.<br>First try <strong>+2 L</strong> · each wrong try <strong>−1 L</strong> · second-try rescue <strong>+1 L</strong>. Balance stops at zero.</div><div class="levels">${m.names.map((name,i)=>{const done=p.completed.includes(i),locked=i>p.unlocked,r=p.results[i];return`<article class="level ${locked?'locked':''}" style="--tint:${m.color}"><div class="level-num">${done?'✓':locked?'◇':String(i+1).padStart(2,'0')}</div><div><h3>${name}${i>=8?' · Speed':''}</h3><div class="small">${groupDescription(id,i)}${r?`<br>Best: ${r.accuracy}% first try · ${r.avg.toFixed(1)}s / fact`:''}</div></div><button class="btn ${done?'soft':''}" data-level="${i}" ${locked?'disabled':''}>${locked?'Locked':done?'Play again':'Let’s go →'}</button></article>`;}).join('')}</div>${weakest(id)}`;}
+function weakest(id){const facts=Object.entries(save.modules[id].stats.facts).sort((a,b)=>{const x=a[1],y=b[1];return x.correct/x.seen-y.correct/y.seen||y.seconds/y.seen-x.seconds/x.seen;}).slice(0,5);return`<div class="weak-list"><h3>Your practice targets</h3><p class="small muted">Lowest first-try accuracy, then slowest answers. Every retry builds a stronger brain.</p>${facts.length?facts.map(([key,f])=>`<div class="weak-fact"><strong>${esc(key)} = ${f.answer}</strong><span>${Math.round(f.correct/f.seen*100)}% · ${(f.seconds/f.seen).toFixed(1)}s · ${f.seen} seen</span></div>`).join(''):'<p class="small muted" style="margin-top:12px">Play a level to discover your strengths and practice targets.</p>'}</div>`;}
+function renderPlay(){const m=modules[game.id];return`<div class="play-top"><div class="row between"><button class="back" id="exitLevel">← Leave level</button><div class="row wrap"><span class="pill streak" id="streak">✦ 0 streak</span>${game.speed?`<span class="pill timer" id="timer" role="timer">${game.limit}s</span>`:'<span class="pill">Untimed · take your time</span>'}</div></div><div class="row between"><h2>${m.names[game.level]}</h2><span class="small muted">${m.name} · Level ${game.level+1}</span></div><div class="level-progress"><div id="progressFill" style="width:0%"></div></div><div class="row between small muted"><span id="progressText">0 / 12 facts explored</span><span id="accuracyText">Goal: 10 first-try wins</span></div></div><section class="question-card"><div class="eyebrow muted" id="questionLabel">YOUR NEXT LITTLE VICTORY</div><div class="question" id="question" aria-live="polite"></div><form id="answerForm" autocomplete="off"><label class="sr-only" for="answer">Your answer</label><div class="answer-row"><input id="answer" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" autocomplete="off" aria-label="Your answer"><button class="btn" id="checkAnswer" type="submit">Check ↗</button><button class="btn soft next-action hidden" id="nextQuestion" type="button"><span id="nextLabel">Next fact →</span><span class="auto-progress" aria-hidden="true"><i></i></span></button></div></form><div class="feedback" id="feedback" aria-live="polite">Type an answer or tap the numbers below.</div><div class="keypad" aria-label="Number pad">${[1,2,3,4,5,6,7,8,9].map(n=>`<button type="button" data-key="${n}">${n}</button>`).join('')}<button type="button" class="minor" data-key="clear">Clear</button><button type="button" data-key="0">0</button><button type="button" data-key="back" aria-label="Backspace">⌫</button></div><button class="btn outline hidden" id="listenBtn" style="margin-top:12px">◎ Speak my answer</button><div class="scoring"><span>First try: +2 L</span><span>Second try: +1 L</span><span>Wrong try: −1 L</span></div></section><p class="bottom-note">${game.speed?'Correct answers roll on after a short pause; that automatic pause doesn’t use your countdown. After a revealed answer, tap Next or press Enter when ready.':'Correct answers roll on after your tutor, then a little pause. Tap Next or press Enter to skip the wait. After two misses, take your time and choose Next yourself.'}</p>`;}
+function renderFinish(){const r=lastResult,m=modules[r.id];return`<section class="finish"><div class="eyebrow muted">${m.name} · Level ${r.level+1}</div><div class="big-trophy">${trophySVG(r.level,!r.passed)}</div><span class="pill ${r.passed?'coin':''}">${r.passed?'QUEST COMPLETE':'A LITTLE MORE PRACTICE'}</span><h1>${r.passed?'Look at you go!':r.timedOut?'A brave speed run!':'Your next win is coming.'}</h1><p>${r.passed?`<strong>${esc(m.names[r.level])}</strong> is mastered. That’s something to be proud of.`:`${r.firstCorrect} of 12 first-try wins. Get at least 10 and finish ${r.timedOut?'before the countdown ends':'the comeback facts'} to master this level.`}</p><div class="stats-row"><div class="stat"><strong>${r.accuracy}%</strong><span>FIRST-TRY ACCURACY</span></div><div class="stat"><strong>${r.avg.toFixed(1)}s</strong><span>AVERAGE / FACT</span></div><div class="stat"><strong>${r.earned>=0?'+':''}${r.earned} L</strong><span>LEVIBUCKS EARNED</span></div></div>${r.passed?`<div class="prize-banner"><strong>✦ ${r.newTrophy?'New treasure!':'Another victory!'}</strong><p style="margin-top:6px">${r.newTrophy?tier(r.level)+' '+m.names[r.level]+' trophy added. ':''}Rank: <strong>${rank(r.id)}</strong>${r.speedRecord?'<br>New speed record! Lightning badge earned.':''}${r.firstCorrect===12?'<br>Perfect Explorer badge — 12 out of 12!':''}</p></div>`:'<div class="prize-banner">Keep your LeviBucks and try a fresh set.<br><strong>Practice turns “not yet” into “I’ve got it.”</strong></div>'}<div class="finish-actions">${r.passed&&r.level<9?'<button class="btn" id="continueLevel">Next adventure →</button>':`<button class="btn" id="retryLevel">${r.passed?'Play again':'Try again →'}</button>`}<button class="btn outline" data-back="levels">Level map</button>${r.passed?'<button class="btn soft" data-back="trophies">See my trophy</button>':''}</div><p class="small muted" style="margin-top:22px">Times measure initial fact-solving, including second chances; feedback pauses are excluded.<br>Your LeviBucks balance always stops at zero.</p></section>`;}
+
+function renderTrophies(){const id=selectedModule,p=save.modules[id],m=modules[id];return`<div class="page-heading"><span class="eyebrow muted">Proof of your superpowers</span><h1>The trophy case</h1><p>Every trophy tells a story: “I kept going, and I got it.”</p></div><div class="tabs" aria-label="Choose a module">${moduleIds.map(x=>`<button data-tab="${x}" class="${x===id?'selected':''}">${modules[x].symbol} ${modules[x].name}</button>`).join('')}</div><div class="row between"><h2 style="font-size:23px">${m.name} treasures</h2><span class="pill">${mastery(id)} / 10 earned</span></div><div class="trophy-grid">${m.names.map((n,i)=>{const done=p.completed.includes(i);return`<article class="trophy ${done?'':'locked'}">${trophySVG(i,!done)}<h3>${tier(i)} ${n}</h3><span class="small muted">${done?'Mastered · Level '+(i+1):'Master level '+(i+1)}</span></article>`;}).join('')}</div><h2 style="font-size:23px">Little legends, big badges</h2><div class="badges">${[['streak5','✦ High-five streak','5 correct in a row'],['streak10','✦ Tenacious ten','10 correct in a row'],['perfect','✧ Perfect explorer','12 first-try wins'],['speed','ϟ Lightning record','Master a speed level']].map(([k,t,d])=>`<div class="badge ${p.badges.includes(k)?'':'locked'}">${t}<div class="small" style="font-weight:400;margin-top:6px">${p.badges.includes(k)?'Earned!':d}</div></div>`).join('')}</div>${moduleStats(id)}${weakest(id)}`;}
+function renderEditor(){const t=save.tutor;return`<div class="page-heading"><span class="eyebrow muted">Made for your adventure</span><h1>Meet your sidekick.</h1><p>A wise owl? A silly slime? Your tutor, your imagination.<br>Changes save instantly. Your companion is the live preview.</p></div><div class="editor-card"><label class="field-label" for="tutorNameInput">01 / A name with character</label><input class="text-field" id="tutorNameInput" maxlength="20" value="${esc(t.name)}" placeholder="Pip"><p class="small muted" style="margin-top:8px">Up to 20 letters of pure personality.</p></div><div class="editor-card"><div class="field-label">02 / Choose a creature</div><div class="shape-grid">${shapes.map(s=>`<button class="shape-button ${s===t.shape?'selected':''}" data-shape="${s}" aria-pressed="${s===t.shape}">${avatar({...t,shape:s,hat:'',glasses:false,cape:false})}${s[0].toUpperCase()+s.slice(1)}</button>`).join('')}</div></div><div class="editor-card"><div class="field-label">03 / A splash of color</div><div class="color-row">${colors.map((c,i)=>`<button class="color-button ${t.color===c?'selected':''}" data-color="${c}" style="background:${c}" aria-label="${['Mint','Lavender','Peach','Sky','Rose','Lime','Gold','Periwinkle'][i]}" aria-pressed="${t.color===c}"></button>`).join('')}</div></div><div class="editor-card"><div class="field-label">04 / Pick a personality</div><div class="personality-grid">${Object.entries(personalities).map(([id,p])=>`<button class="personality ${id===t.personality?'selected':''}" data-personality="${id}" aria-pressed="${id===t.personality}"><strong>${p.label}</strong><span>${p.desc}</span></button>`).join('')}</div></div>${voiceEditor()}<div class="editor-card"><div class="row between wrap"><div><h3>Dress for success.</h3><p class="small muted" style="margin-top:8px">Hats, capes, and magical places await.</p></div><button class="btn soft" data-back="shop">Visit prize shop ↗</button></div></div>`;}
+function shopVisual(item){if(item.type==='hat')return`<svg viewBox="0 0 200 100" aria-hidden="true">${accessories({hat:item.id})}</svg>`;if(item.type==='glasses')return`<svg viewBox="0 0 200 130" aria-hidden="true">${accessories({glasses:true})}</svg>`;if(item.type==='cape')return'<svg viewBox="0 0 140 110" aria-hidden="true"><path d="M48 20 22 98q48-20 96 0L92 20z" fill="#a686ce" stroke="#665085" stroke-width="3"/><path d="M48 20q22 15 44 0" fill="none" stroke="#e5cc78" stroke-width="7"/><path d="m70 43 5 12 13 2-10 9 3 14-11-7-11 7 3-14-10-9 13-2z" fill="#e9d885"/></svg>';return`<svg viewBox="0 0 140 100" aria-hidden="true"><rect x="3" y="3" width="134" height="94" rx="15" fill="${item.id==='bg-space'?'#294e66':item.id==='bg-sunset'?'#efba9e':'#b0d3a0'}"/>${item.id==='bg-space'?'<circle cx="85" cy="48" r="24" fill="#d8f578"/><path d="m35 24 3 6 6 2-6 3-3 6-2-6-7-3 7-2z" fill="#b8a2e8"/><circle cx="34" cy="76" r="3" fill="white"/>':item.id==='bg-sunset'?'<circle cx="72" cy="54" r="25" fill="#ffe18e"/><path d="M3 76q30-25 65 0t69-5v26H3" fill="#d58f8d"/>':'<path d="m35 18-22 45h44zm63 4L70 77h56z" fill="#639b68"/><path d="M35 62v22m63-7v12" stroke="#446f53" stroke-width="7"/>'}</svg>`;}
+function isEquipped(item){const t=save.tutor;return item.type==='hat'?t.hat===item.id:item.type==='background'?t.background===item.id:!!t[item.type];}
+function renderShop(){return`<div class="page-heading"><span class="eyebrow muted">You earned it. Make it yours.</span><h1>The prize shop</h1><p>Spend your LeviBucks on a little extra awesome.<br>Just pretend money. No real purchases. Every creature is always free.</p></div><div class="rule">Your gear works on every tutor. Buy it once, keep it forever.<br>Tap an equipped item to take it off.</div><div class="shop-grid">${shopItems.map(item=>{const owned=save.purchases.includes(item.id),equipped=isEquipped(item);return`<article class="shop-card"><div class="shop-art">${shopVisual(item)}</div><h3>${item.name}</h3><p class="small muted" style="margin-top:8px;min-height:40px">${item.desc}</p><button class="btn ${equipped?'soft':owned?'outline':''}" data-buy="${item.id}" ${!owned&&save.balance<item.price?'disabled':''}>${equipped?'✓ Equipped · remove':owned?'Wear it →':item.price+' LeviBucks · buy'}</button>${!owned&&save.balance<item.price?`<p class="small muted" style="margin-top:8px;text-align:center">${item.price-save.balance} more LeviBucks to go</p>`:''}</article>`;}).join('')}</div>`;}
+function buy(id){const item=shopItems.find(x=>x.id===id);if(!item)return;const owned=save.purchases.includes(id);if(!owned){if(save.balance<item.price)return;save.purchases.push(id);money(-item.price);toast(item.name+' is yours forever!');}const t=save.tutor,on=isEquipped(item);if(item.type==='hat')t.hat=on?'':id;else if(item.type==='background')t.background=on?'':id;else t[item.type]=!on;persist();updateTutor();show('shop');if(!owned)chatter('shop',{item:item.name},'success');else say(`${item.name} ${on?'removed':'equipped'}. Your look is saved.`,'',false);}
+function editTutor(key,value){save.tutor[key]=value;persist();updateTutor();const y=scrollY;show('editor');window.scrollTo(0,y);if(key==='personality')chatter('greeting',{},'success');}
+function bindScreen(){document.querySelectorAll('[data-world]').forEach(b=>b.onclick=()=>{show('levels',b.dataset.world);say(line('greeting')+' Welcome to the '+modules[b.dataset.world].world+'.');});document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>navigate(b.dataset.back));document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>startLevel(Number(b.dataset.level)));document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>show('trophies',b.dataset.tab));document.querySelectorAll('[data-buy]').forEach(b=>b.onclick=()=>buy(b.dataset.buy));
+if(screen==='play'){$('#answerForm').onsubmit=e=>{e.preventDefault();submitAnswer();};$('#answer').oninput=e=>e.target.value=e.target.value.replace(/\D/g,'').slice(0,3);document.querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>{if(game.locked)return;const el=$('#answer'),k=b.dataset.key;if(k==='clear')el.value='';else if(k==='back')el.value=el.value.slice(0,-1);else el.value=(el.value+k).slice(0,3);});$('#exitLevel').onclick=()=>navigate('levels');$('#nextQuestion').onclick=nextQuestion;$('#listenBtn').onclick=startListening;}
+if(screen==='finish'){$('#continueLevel')?.addEventListener('click',()=>startLevel(lastResult.level+1));$('#retryLevel')?.addEventListener('click',()=>startLevel(lastResult.level));}
+if(screen==='editor'){bindVoiceEditor();$('#tutorNameInput').oninput=e=>{save.tutor.name=e.target.value.trim().slice(0,20)||'Pip';persist();$('#tutorName').textContent=save.tutor.name;};document.querySelectorAll('[data-shape]').forEach(b=>b.onclick=()=>editTutor('shape',b.dataset.shape));document.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>editTutor('color',b.dataset.color));document.querySelectorAll('[data-personality]').forEach(b=>b.onclick=()=>editTutor('personality',b.dataset.personality));}}
+
+function modal(html){$('#modalRoot').innerHTML=`<div class="overlay"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">${html}</section></div>`;setTimeout(()=>$('.modal input,.modal button')?.focus(),0);}
+function closeModal(){$('#modalRoot').innerHTML='';$('#settingsBtn').focus();}
+function confirmModal(title,text,yes,label='Confirm'){modal(`<div class="eyebrow muted">A quick check</div><h2 id="modalTitle">${esc(title)}</h2><p>${esc(text)}</p><div class="row"><button class="btn outline" id="cancelConfirm">Stay here</button><button class="btn" id="yesConfirm">${esc(label)}</button></div>`);$('#cancelConfirm').onclick=closeModal;$('#yesConfirm').onclick=()=>{closeModal();yes();};}
+function firstLaunch(){modal(`<div class="brand-mark">✦</div><h2 id="modalTitle">Your adventure starts here.</h2><p>Twelve little facts. Big “I did it!” energy. What should your tutor call you?</p><form id="nameForm"><label class="field-label" for="playerName">Explorer’s first name or nickname</label><input class="text-field" id="playerName" maxlength="20" placeholder="Levi" autocomplete="off"><button class="btn" type="submit">Let’s go exploring →</button></form><p class="small" style="margin:15px 0 0">No account needed. Your quest saves only in this browser. Optional speech features are handled by your browser.</p>`);$('#nameForm').onsubmit=e=>{e.preventDefault();save.name=$('#playerName').value.trim().slice(0,20)||'Levi';persist();closeModal();show('home');chatter('greeting',{},'success');};}
+function settings(){modal(`<div class="row between"><span class="eyebrow muted">Grown-up corner</span><button class="icon-btn" id="closeSettings" aria-label="Close settings">×</button></div><h2 id="modalTitle">Quest settings</h2><div class="settings-option"><label class="field-label" for="renamePlayer">Explorer name</label><input class="text-field" id="renamePlayer" maxlength="20" value="${esc(save.name)}"><button class="btn soft" id="saveName">Save name</button></div><div class="settings-option"><label class="row between" for="soundSetting"><strong>Celebration sounds</strong><input type="checkbox" id="soundSetting" ${save.sound?'checked':''}></label><p class="small" style="margin:10px 0 0">Soft, device-generated tones. Tutor voice has its own toggle.</p></div><div class="settings-option"><p class="small" style="margin:0"><strong>How mastery works</strong><br>10 of 12 initial facts correct on the first try (83% or better). A wrong-twice fact returns until solved. A second chance earns +1, but does not count toward mastery. The first 8 levels are untimed; speed levels allow 120 then 90 seconds, including manual feedback pauses. The short automatic pause after a correct answer does not use the countdown. A timeout means retry.<br><br>Stats count initial facts; solving time includes second chances but not between-fact feedback. Leaving a level saves resolved-fact stats and money, not unfinished level progress.<br><br>Progress lives only in this browser profile and file location. Private browsing or clearing browser data may erase it. Speech features depend on your browser; voice input may use an online service and need microphone permission. No sign-in, real purchases, ads, or tracking.</p></div><div class="settings-option"><button class="btn danger" id="resetGame">Reset all progress</button><p class="small" style="margin:10px 0 0">Clears this game’s name, LeviBucks, trophies, and tutor gear.</p></div>`);$('#closeSettings').onclick=closeModal;$('#saveName').onclick=()=>{save.name=$('#renamePlayer').value.trim().slice(0,20)||'Levi';persist();show(screen);toast('Explorer name saved.');closeModal();};$('#soundSetting').onchange=e=>{save.sound=e.target.checked;persist();};$('#resetGame').onclick=()=>confirmModal('Start a brand-new quest?','This permanently clears all progress, LeviBucks, purchases, and tutor designs in this browser.',()=>{leavePlay();save=fresh();persist();updateTutor();show('home');firstLaunch();},'Reset everything');}
+// Deliberately never auto-submit speech: the child can check what was heard.
+function spokenNumber(text){text=text.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').replace(/-/g,' ').replace(/\b(the answer is|answer|equals|is|and)\b/g,' ').trim().replace(/\s+/g,' ');if(/^\d{1,3}$/.test(text))return Number(text);const ones=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],tens=['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];if(text==='oh')return 0;let words=text.split(' '),base=0;if(words[1]==='hundred'&&ones.indexOf(words[0])>0&&ones.indexOf(words[0])<10){base=ones.indexOf(words[0])*100;words=words.slice(2);if(!words.length)return base;}const rest=words.join(' '),n=ones.indexOf(rest);if(n>=0)return base+n;const t=tens.indexOf(words[0]);if(t>=0&&(words.length===1||words.length===2&&ones.indexOf(words[1])>0&&ones.indexOf(words[1])<10))return base+(t+2)*10+(words.length===2?ones.indexOf(words[1]):0);return null;}
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+function updateMicUI(){const b=$('#listenBtn');if(b){b.classList.toggle('hidden',!save.mic||!SpeechRecognition);b.disabled=!!game?.locked;b.textContent=listening?'Listening… tap to stop':'◎ Speak my answer';}}
+function stopListening(){if(recognition){recognition.onresult=null;try{recognition.abort();}catch(e){}}recognition=null;listening=false;updateMicUI();}
+function startListening(){if(!SpeechRecognition||!game||game.locked)return;if(listening){stopListening();return;}try{cancelSpeech();recognition=new SpeechRecognition();recognition.lang='en-US';recognition.interimResults=false;recognition.maxAlternatives=1;recognition.onresult=e=>{const n=spokenNumber(e.results[0][0].transcript);if(n===null){toast('I didn’t catch a number. Try again or type it.');return;}if(game&&!game.locked&&!game.finished){$('#answer').value=n;toast('Heard '+n+' — check it, then press Check.');}};recognition.onerror=e=>{if(e.error==='aborted')return;toast(e.error==='not-allowed'?'Microphone permission is off. You can still type.':'Voice input isn’t available right now. Try typing.');};recognition.onend=()=>{listening=false;updateMicUI();};recognition.start();listening=true;updateMicUI();}catch(e){listening=false;toast('Voice input isn’t available. Typing works everywhere.');updateMicUI();}}
+function init(){if(!SpeechRecognition)save.mic=false;if(!window.speechSynthesis)save.voice=false;persist();initializeVoices();updateTutor();show('home');if(save.name)chatter('greeting',{},'',false);$('#micToggle').disabled=!SpeechRecognition;$('#voiceToggle').disabled=!window.speechSynthesis;$('#voiceNote').textContent=SpeechRecognition?'Experimental mic: permission + internet may be needed. Check what was heard before submitting.':'Voice answers are unavailable in this browser (experimental, mainly Chrome / Edge). Typing always works.';if(!window.speechSynthesis)$('#voiceNote').textContent+=' Tutor speech is unavailable here.';document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>navigate(b.dataset.nav));$('#settingsBtn').onclick=()=>{if(game&&!game.finished){toast('Finish or leave your level before opening parent settings.');return;}settings();};$('#voiceToggle').onclick=()=>{save.voice=!save.voice;persist();updateTutor();if(!save.voice)cancelSpeech();else if(save.voice)speak(currentBubble||'Voice is on! Let’s go exploring.');};$('#micToggle').onclick=()=>{save.mic=!save.mic;persist();updateTutor();updateMicUI();if(!save.mic)stopListening();};document.addEventListener('keydown',e=>{if(e.key==='Enter'&&game?.locked&&!game.finished&&!$('#modalRoot').innerHTML){e.preventDefault();nextQuestion();}if(e.key==='Escape'&&$('#modalRoot').innerHTML&&!$('#nameForm'))closeModal();if(e.key==='Tab'&&$('#modalRoot').innerHTML){const items=[...document.querySelectorAll('.modal button:not(:disabled),.modal input')],a=items[0],b=items[items.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();b.focus();}else if(!e.shiftKey&&document.activeElement===b){e.preventDefault();a.focus();}}});if(!save.name)firstLaunch();}
+init();
+</script></body></html>
